@@ -1,0 +1,56 @@
+/* CLEANUP */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    /* 62%=10px=1rem */
+    font-size: 62.5%;
+    line-height: 1.5;
+    /* text rendering */
+    -webkit-font-smoothing: antialiased;
+    background-color: #f4f6f6;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* STYLE */
+.wrapper {
+    display: block;
+    width: 430px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+}
