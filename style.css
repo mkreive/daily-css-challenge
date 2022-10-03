@@ -78,27 +78,50 @@ h6 {
 }
 
 .header_big {
-    font-size: 4.8rem;
-    letter-spacing: 0.1rem;
+    padding-left: 1rem;
+    font-size: 4rem;
+    letter-spacing: 0.4rem;
 }
 
 .header_medium {
-    font-size: 1.55rem;
+    padding-left: 0.5rem;
+    font-size: 1.4rem;
     font-weight: 100;
 }
 
 .number-container {
     display: flex;
-    background-color: white;
+    flex-direction: row;
     margin-bottom: 1rem;
+    justify-content: center;
 }
-.number-container_1 {
+.one {
+    z-index: 99;
     display: block;
-    width: 5rem;
+    width: 1.7rem;
     height: 6rem;
+    background-color: white;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 0.15rem;
 }
-.number-container_0 {
+.one:nth-child(1) {
+    transform: rotate(48deg);
+    height: 3rem;
+    width: 1.5rem;
+    margin-right: -0.4rem;
+}
+.zero {
     display: block;
     width: 6rem;
     height: 6rem;
+    border-radius: 3rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1.6rem solid white;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    margin-left: -1.1rem;
+    z-index: 55;
+}
+
+.zero_second {
+    z-index: 5;
 }
