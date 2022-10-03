@@ -127,6 +127,17 @@ h6 {
 }
 
 /* CHALLENGE-2 */
+@keyframes makex {
+    0% {
+        background-color: red;
+    }
+    50% {
+        background-color: green;
+    }
+    100% {
+        background-color: yellow;
+    }
+}
 
 .challenge-2 {
     position: relative;
@@ -146,6 +157,11 @@ h6 {
 }
 .line-container:hover {
     cursor: pointer;
+}
+.line-container:active,
+.line-container:focus {
+    animation-name: makex;
+    animation-duration: 2s;
 }
 
 .line {
