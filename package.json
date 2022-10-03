@@ -1,0 +1,11 @@
+{
+  "name": "18-dailycss",
+  "version": "1.0.0",
+  "description": "daily css tasks I've done",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "monika kreive",
+  "license": "ISC"
+}
