@@ -152,7 +152,6 @@ h6 {
     border-radius: 3px;
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
     display: inline-block;
-    transition: all 0.4s;
 }
 .menu__lines::before,
 .menu__lines::after {
@@ -167,15 +166,42 @@ h6 {
     top: 1.4rem;
 }
 
-.menu__checkbox:checked + .menu__button .menu__lines {
+/* .menu__checkbox:hover + .menu__button .menu__lines {
+    box-shadow: none;
+    transition-property: background-color;
+    transition-duration: 600ms;
     background-color: transparent;
 }
-
-.menu__checkbox:checked + .menu__button .menu__lines:before {
+.menu__checkbox:hover + .menu__button .menu__lines:before {
+    transition-property: top;
+    transition-duration: 500ms;
     top: 0;
-    transform: rotate(135deg);
+}
+.menu__checkbox:hover + .menu__button .menu__lines:after {
+    transition-property: top;
+    transition-duration: 500ms;
+    top: 0;
+}
+.menu__checkbox:checked + .menu__button .menu__lines:before {
+    transform: rotate(135deg) 1s ease-in;
 }
 .menu__checkbox:checked + .menu__button .menu__lines:after {
+    transform: rotate(-135deg) 1s ease-in;
+} */
+
+.menu__checkbox:checked + .menu__button .menu__lines {
+    transition-property: background-color, box-shadow;
+    transition-duration: 300ms;
+    background-color: transparent;
+    box-shadow: none;
+}
+.menu__checkbox:checked + .menu__button .menu__lines:before {
+    transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
     top: 0;
-    transform: rotate(-135deg);
+    transform: rotate(45deg);
+}
+.menu__checkbox:checked + .menu__button .menu__lines::after {
+    transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
+    top: 0;
+    transform: rotate(135deg);
 }
