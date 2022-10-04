@@ -127,18 +127,6 @@ h6 {
 }
 
 /* CHALLENGE-2 */
-@keyframes makex {
-    0% {
-        background-color: red;
-    }
-    50% {
-        background-color: green;
-    }
-    100% {
-        background-color: yellow;
-    }
-}
-
 .challenge-2 {
     position: relative;
     background: rgb(96, 173, 133);
@@ -148,27 +136,46 @@ h6 {
     display: grid;
     place-content: center;
 }
-
-.line-container {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    gap: 0.9rem;
+.menu__checkbox {
+    display: none;
 }
-.line-container:hover {
+.menu__lines {
+    position: relative;
     cursor: pointer;
 }
-.line-container:active,
-.line-container:focus {
-    animation-name: makex;
-    animation-duration: 2s;
-}
-
-.line {
-    display: block;
+.menu__lines,
+.menu__lines::before,
+.menu__lines::after {
     background-color: white;
     height: 0.5rem;
     width: 5rem;
     border-radius: 3px;
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    transition: all 0.4s;
+}
+.menu__lines::before,
+.menu__lines::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+.menu__lines::before {
+    top: -1.4rem;
+}
+.menu__lines::after {
+    top: 1.4rem;
+}
+
+.menu__checkbox:checked + .menu__button .menu__lines {
+    background-color: transparent;
+}
+
+.menu__checkbox:checked + .menu__button .menu__lines:before {
+    top: 0;
+    transform: rotate(135deg);
+}
+.menu__checkbox:checked + .menu__button .menu__lines:after {
+    top: 0;
+    transform: rotate(-135deg);
 }

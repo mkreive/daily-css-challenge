@@ -1,11 +1,9 @@
 'use strict';
 
 // CHALLENGE-2
+const menuBtn = document.querySelector('.menu__button');
 
-const menuBtn = document.querySelectorAll('line');
-
-menuBtn.forEach((btn) => {
-    btn.addEventListener('click', function () {
-        console.log('click');
-    });
+menuBtn.addEventListener('click', function () {
+    console.log('clicked');
+    menuBtn.classList.toggle('clicked');
 });
