@@ -220,4 +220,35 @@ h6 {
     width: 60%;
     height: 100%;
     align-items: center;
+    justify-content: center;
+}
+.photo_circle {
+    border: 1px solid rgba(117, 101, 83);
+    border-radius: 50%;
+    padding: 2px;
+    margin-bottom: 1rem;
+}
+.header_small {
+    font-weight: 700;
+    font-size: 1rem;
+    color: rgba(117, 101, 83);
+}
+.header_mini {
+    color: rgba(117, 101, 83);
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+.btn__container {
+    margin-top: 1.4rem;
+}
+.btn_brown {
+    background-color: white;
+    color: rgba(117, 101, 83);
+    border: 1px solid rgba(117, 101, 83);
+    border-radius: 1rem;
+    padding: 0.2rem 1.8rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    margin: 0.3rem 2rem;
+    width: 9rem;
 }
