@@ -46,6 +46,15 @@ h6 {
 }
 
 /* STYLE */
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .wrapper {
     display: block;
     width: 430px;
