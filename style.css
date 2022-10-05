@@ -224,10 +224,25 @@ h6 {
     justify-content: center;
 }
 .photo_circle {
-    border: 1px solid rgba(117, 101, 83);
-    border-radius: 50%;
+    z-index: 99;
+    border-style: solid;
+    border-width: 1px;
     padding: 2px;
+    border-color: #756553 #756553 #756553 white;
+    border-radius: 50%;
     margin-bottom: 1rem;
+}
+.photo_circle_background {
+    position: absolute;
+    z-index: 2;
+    top: 2.03rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #756553 white #756553 #756553;
 }
 .header_brown_medium {
     text-transform: capitalize;
