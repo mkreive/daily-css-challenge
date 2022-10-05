@@ -208,16 +208,17 @@ h6 {
     margin: auto;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 80%;
     height: 75%;
     background-color: white;
     border-radius: 3px;
+    box-shadow: 12px 10px 10px 0px rgba(0, 0, 0, 0.2);
 }
 .card__left {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 65%;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -228,12 +229,20 @@ h6 {
     padding: 2px;
     margin-bottom: 1rem;
 }
-.header_small {
+.header_brown_medium {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgba(117, 101, 83);
+}
+.header_brown_small {
+    text-transform: capitalize;
     font-weight: 700;
     font-size: 1rem;
     color: rgba(117, 101, 83);
 }
-.header_mini {
+.header_brown_mini {
+    text-transform: capitalize;
     color: rgba(117, 101, 83);
     font-size: 0.8rem;
     font-weight: 300;
@@ -251,4 +260,29 @@ h6 {
     font-weight: 700;
     margin: 0.3rem 2rem;
     width: 9rem;
+}
+.btn_brown:hover {
+    background-color: rgba(117, 101, 83);
+    color: white;
+}
+.card_right {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    width: 35%;
+    background-color: rgba(243, 232, 224);
+}
+.block_brown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 33.33%;
+    border-bottom: 1px solid white;
+}
+.block_brown:nth-child(3) {
+    border: none;
+}
+.block_brown:hover {
+    transition: 300ms ease-in;
+    background-color: rgb(224, 208, 197);
 }
