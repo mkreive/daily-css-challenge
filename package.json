@@ -1,11 +1,23 @@
 {
-  "name": "18-dailycss",
-  "version": "1.0.0",
-  "description": "daily css tasks I've done",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "monika kreive",
-  "license": "ISC"
+    "name": "18-dailycss",
+    "version": "1.0.0",
+    "description": "daily css tasks I've done",
+    "main": "script.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    },
+    "author": "monika kreive",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.18.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.2.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-promise": "^6.0.0",
+        "eslint-plugin-react": "^7.30.0",
+        "node-sass": "^7.0.1"
+    }
 }

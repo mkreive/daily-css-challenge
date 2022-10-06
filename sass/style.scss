@@ -1,4 +1,4 @@
-/* CLEANUP */
+// CLEANUP
 *,
 *::before,
 *::after {
@@ -45,7 +45,18 @@ h6 {
     overflow-wrap: break-word;
 }
 
-/* STYLE */
+// VARIABLES
+$color-white: white;
+$color-blue-violet: rgb(66, 61, 153);
+$color-blue-electric: rgba(111, 194, 200, 1);
+
+$border-radius-small: 3px;
+
+$box-shadow-medium: 1px 2px 10px 0px rgba(0, 0, 0, 0.03);
+
+$font-family-calistoga: 'Calistoga', cursive;
+
+// CONTAINERS
 .container {
     width: 100vw;
     height: 100vh;
@@ -59,19 +70,19 @@ h6 {
     display: block;
     width: 430px;
     height: 400px;
-    background-color: white;
+    background-color: $color-white;
     padding: 3px;
-    border-radius: 3px;
+    border-radius: $border-radius-small;
     margin: 60px auto 60px auto;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.03);
+    box-shadow: v$box-shadow-medium;
 }
-/* CHALLENGE-1 */
 
+// CHALANGE1
 .challenge-1 {
-    font-family: 'Calistoga', cursive;
-    background: rgb(66, 61, 153);
-    background: linear-gradient(36deg, rgba(66, 61, 153, 1) 0%, rgba(111, 194, 200, 1) 85%);
-    border-radius: 3px;
+    font-family: $font-family-calistoga;
+    background: $color-blue-violet;
+    background: linear-gradient(36deg, $color-blue-violet 0%, $color-blue-electric 85%);
+    border-radius: $border-radius-small;
     height: 100%;
     width: 100%;
     display: flex;
@@ -80,21 +91,27 @@ h6 {
     justify-content: center;
     align-items: center;
 }
+
 .header {
-    color: white;
     text-transform: uppercase;
     line-height: 3rem;
+
+    &_white {
+        color: $color-white;
+
+        &_big {
+            padding-left: 1rem;
+            font-size: 4rem;
+            letter-spacing: 0.4rem;
+        }
+        &_medium {
+            padding-left: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 100;
+        }
+    }
 }
-.header_big {
-    padding-left: 1rem;
-    font-size: 4rem;
-    letter-spacing: 0.4rem;
-}
-.header_medium {
-    padding-left: 0.5rem;
-    font-size: 1.4rem;
-    font-weight: 100;
-}
+
 .number-container {
     display: flex;
     flex-direction: row;
