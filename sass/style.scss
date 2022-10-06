@@ -1,3 +1,38 @@
+// VARIABLES
+$color-white: white;
+$color-black: rgba(255, 255, 255, 0);
+$color-blue-violet: rgb(66, 61, 153);
+$color-blue-electric: rgba(111, 194, 200, 1);
+$color-green-electric: rgb(96, 173, 133);
+$color-yellow-pale: rgba(230, 190, 119);
+$color-yellow-orangy: rgba(193, 129, 87, 1);
+$color-brown-pale: #756553;
+
+$border-radius-round: 50%;
+$border-radius-very-big: 3rem;
+$border-radius-small: 0.3rem;
+$border-radius-very-small: 0.15rem;
+
+$box-shadow-medium: 1px 2px 10px 0px rgba(0, 0, 0, 0.03);
+$box-shadow-stronger: 12px 10px 10px 0px rgba(0, 0, 0, 0.2);
+
+$font-family-calistoga: 'Calistoga', cursive;
+$font-family-opensans: 'Open Sans', sans-serif;
+
+$font-size-huge: 4rem;
+$font-size-medium: 1.4rem;
+
+$font-weight-very-heavy: 700;
+$font-weight-heavy: 600;
+$font-weight-medium: 500;
+$font-weight-light: 400;
+$font-weight-very-light: 300;
+$font-weight-lightest: 100;
+
+$margin-bottom-big: 3rem;
+$margin-bottom-medium: 2rem;
+$margin-bottom-small: 1rem;
+
 // CLEANUP
 *,
 *::before,
@@ -45,17 +80,6 @@ h6 {
     overflow-wrap: break-word;
 }
 
-// VARIABLES
-$color-white: white;
-$color-blue-violet: rgb(66, 61, 153);
-$color-blue-electric: rgba(111, 194, 200, 1);
-
-$border-radius-small: 3px;
-
-$box-shadow-medium: 1px 2px 10px 0px rgba(0, 0, 0, 0.03);
-
-$font-family-calistoga: 'Calistoga', cursive;
-
 // CONTAINERS
 .container {
     width: 100vw;
@@ -73,11 +97,10 @@ $font-family-calistoga: 'Calistoga', cursive;
     background-color: $color-white;
     padding: 3px;
     border-radius: $border-radius-small;
-    margin: 60px auto 60px auto;
     box-shadow: v$box-shadow-medium;
 }
 
-// CHALANGE1
+// CHALLENGE1
 .challenge-1 {
     font-family: $font-family-calistoga;
     background: $color-blue-violet;
@@ -93,21 +116,20 @@ $font-family-calistoga: 'Calistoga', cursive;
 }
 
 .header {
-    text-transform: uppercase;
-    line-height: 3rem;
-
     &_white {
+        text-transform: uppercase;
+        line-height: 3rem;
         color: $color-white;
 
         &_big {
             padding-left: 1rem;
-            font-size: 4rem;
+            font-size: $font-size-huge;
             letter-spacing: 0.4rem;
         }
         &_medium {
             padding-left: 0.5rem;
-            font-size: 1.4rem;
-            font-weight: 100;
+            font-size: $font-size-medium;
+            font-weight: $font-weight-lightest;
         }
     }
 }
@@ -115,121 +137,131 @@ $font-family-calistoga: 'Calistoga', cursive;
 .number-container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 1rem;
     justify-content: center;
-}
-.one {
-    z-index: 99;
-    display: block;
-    width: 1.7rem;
-    height: 6rem;
-    background-color: white;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    border-radius: 0.15rem;
-}
-.one:nth-child(1) {
-    transform: rotate(48deg);
-    height: 3rem;
-    width: 1.5rem;
-    margin-right: -0.4rem;
-}
-.zero {
-    display: block;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 3rem;
-    background-color: rgba(255, 255, 255, 0);
-    border: 1.6rem solid white;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    margin-left: -1.1rem;
-    z-index: 55;
-}
-.zero_second {
-    z-index: 5;
+    margin-bottom: $margin-bottom-small;
+
+    &__one {
+        z-index: 99;
+        display: block;
+        width: 1.7rem;
+        height: 6rem;
+        background-color: $color-white;
+        box-shadow: $box-shadow-medium;
+        border-radius: $border-radius-very-small;
+
+        &:nth-child(1) {
+            transform: rotate(48deg);
+            height: 3rem;
+            width: 1.5rem;
+            margin-right: -0.4rem;
+        }
+    }
+
+    &__zero {
+        display: block;
+        width: 6rem;
+        height: 6rem;
+        border-radius: $border-radius-very-big;
+        background-color: $color-black;
+        border: 1.6rem solid white;
+        box-shadow: $box-shadow-medium;
+        margin-left: -1.1rem;
+        z-index: 55;
+
+        &_second {
+            z-index: 5;
+        }
+    }
 }
 
-/* CHALLENGE-2 */
+// CHALLENGE2
 .challenge-2 {
     position: relative;
-    background: rgb(96, 173, 133);
-    border-radius: 3px;
+    background: $color-green-electric;
+    border-radius: $border-radius-small;
     height: 100%;
     width: 100%;
     display: grid;
     place-content: center;
 }
-.menu__checkbox {
-    display: none;
-}
-.menu__lines {
-    position: relative;
-    cursor: pointer;
-}
-.menu__lines,
-.menu__lines::before,
-.menu__lines::after {
-    background-color: white;
-    height: 0.5rem;
-    width: 5rem;
-    border-radius: 3px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-}
-.menu__lines::before,
-.menu__lines::after {
-    content: '';
-    position: absolute;
-    left: 0;
-}
-.menu__lines::before {
-    top: -1.4rem;
-}
-.menu__lines::after {
-    top: 1.4rem;
-}
-.menu__checkbox:checked + .menu__button .menu__lines {
-    transition-property: background-color, box-shadow;
-    transition-duration: 300ms;
-    background-color: transparent;
-    box-shadow: none;
-}
-.menu__checkbox:checked + .menu__button .menu__lines:before {
-    transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
-    top: 0;
-    transform: rotate(45deg);
-}
-.menu__checkbox:checked + .menu__button .menu__lines::after {
-    transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
-    top: 0;
-    transform: rotate(135deg);
-}
-.menu__checkbox:not(:checked) + .menu__button .menu__lines {
-    transition: background-color 400ms ease-in 200ms, box-shadow 400ms ease-in 200ms;
-    background-color: white;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-}
-.menu__checkbox:not(:checked) + .menu__button .menu__lines:before {
-    transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
-    transform: rotate(0);
-    top: -1.4rem;
-}
-.menu__checkbox:not(:checked) + .menu__button .menu__lines::after {
-    transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
-    transform: rotate(0);
-    top: 1.4rem;
+
+.menu-burger-3 {
+    &__checkbox {
+        display: none;
+    }
+    &__lines {
+        position: relative;
+        cursor: pointer;
+
+        &,
+        &::before,
+        &::after {
+            background-color: $color-white;
+            height: 0.5rem;
+            width: 5rem;
+            border-radius: $border-radius-small;
+            box-shadow: $box-shadow-medium;
+            display: inline-block;
+        }
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+        &::before {
+            top: -1.4rem;
+        }
+        &::after {
+            top: 1.4rem;
+        }
+    }
+
+    &__checkbox:checked + &__button &__lines {
+        transition-property: background-color, box-shadow;
+        transition-duration: 300ms;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    &__checkbox:checked + &__button &__lines:before {
+        transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
+        top: 0;
+        transform: rotate(45deg);
+    }
+    &__checkbox:checked + &__button &__lines:after {
+        transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &__checkbox:not(:checked) + &__button &__lines {
+        transition: background-color 400ms ease-in 200ms, box-shadow 400ms ease-in 200ms;
+        background-color: $color-white;
+        box-shadow: $box-shadow-medium;
+    }
+    &__checkbox:not(:checked) + &__button &__lines:before {
+        transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
+        transform: rotate(0);
+        top: -1.4rem;
+    }
+    &__checkbox:not(:checked) + &__button &__lines::after {
+        transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
+        transform: rotate(0);
+        top: 1.4rem;
+    }
 }
 
-/* CHALLENGE-3 */
+// CHALLENGE3
 .challenge-3 {
-    font-family: 'Open Sans', sans-serif;
-    background: rgba(230, 190, 119);
-    background: linear-gradient(36deg, rgba(230, 190, 119) 0%, rgba(193, 129, 87, 1) 85%);
-    border-radius: 3px;
+    font-family: $font-family-opensans;
+    background: $color-yellow-pale;
+    background: linear-gradient(36deg, $color-yellow-pale 0%, $color-yellow-orangy 85%);
+    border-radius: $border-radius-small;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
+
 .card {
     margin: auto;
     position: relative;
@@ -237,39 +269,45 @@ $font-family-calistoga: 'Calistoga', cursive;
     flex-direction: row;
     width: 80%;
     height: 75%;
-    background-color: white;
-    border-radius: 3px;
-    box-shadow: 12px 10px 10px 0px rgba(0, 0, 0, 0.2);
+    background-color: $color-white;
+    border-radius: $border-radius-small;
+    box-shadow: $box-shadow-stronger;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 }
-.card__left {
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+
+.photo {
+    &_circle {
+        z-index: 99;
+        border-style: solid;
+        border-width: 1px;
+        padding: 2px;
+        border-color: $color-brown-pale $color-brown-pale $color-brown-pale $color-white;
+        border-radius: $border-radius-round;
+        margin-bottom: $margin-bottom-small;
+
+        &_background {
+            position: absolute;
+            z-index: 2;
+            top: 2.03rem;
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 50%;
+            background-color: white;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #756553 white #756553 #756553;
+        }
+    }
 }
-.photo_circle {
-    z-index: 99;
-    border-style: solid;
-    border-width: 1px;
-    padding: 2px;
-    border-color: #756553 #756553 #756553 white;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-.photo_circle_background {
-    position: absolute;
-    z-index: 2;
-    top: 2.03rem;
-    width: 4.8rem;
-    height: 4.8rem;
-    border-radius: 50%;
-    background-color: white;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #756553 white #756553 #756553;
-}
+
 .header_brown_medium {
     text-transform: capitalize;
     font-weight: 600;
