@@ -5,12 +5,12 @@
     "main": "script.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "compile:sass": "node-sass sass/main.scss css/style.css -w"
+        "compile:sass": "node-sass sass/style.scss css/style.css -w"
     },
     "author": "monika kreive",
     "license": "ISC",
     "devDependencies": {
-        "eslint": "^8.18.0",
+        "eslint": "^8.24.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-config-standard": "^17.0.0",
         "eslint-plugin-import": "^2.26.0",
@@ -18,6 +18,9 @@
         "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-promise": "^6.0.0",
         "eslint-plugin-react": "^7.30.0",
-        "node-sass": "^7.0.1"
+        "node-sass": "^7.0.3"
+    },
+    "dependencies": {
+        "sass": "^1.55.0"
     }
 }
