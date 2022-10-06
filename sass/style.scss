@@ -9,6 +9,7 @@ $color-green-electric: rgb(96, 173, 133);
 $color-yellow-pale: rgb(230, 190, 119);
 $color-yellow-orangy: rgb(193, 129, 87);
 $color-brown-pale: rgb(117, 101, 83);
+$color-brown-pale-transparent: rgba(145, 124, 101, 0.241);
 $color-brown-pale-very-light: rgb(243, 232, 224);
 
 $border-radius-round: 50%;
@@ -17,8 +18,8 @@ $border-radius-medium: 1rem;
 $border-radius-small: 0.3rem;
 $border-radius-very-small: 0.15rem;
 
-$box-shadow-medium: 1px 2px 10px 0px rgba(0, 0, 0, 0.03);
-$box-shadow-stronger: 12px 10px 10px 0px rgba(0, 0, 0, 0.2);
+$box-shadow-centered: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+$box-shadow-right-bottom: 12px 10px 10px 0px rgba(0, 0, 0, 0.2);
 
 $font-family-calistoga: 'Calistoga', cursive;
 $font-family-opensans: 'Open Sans', sans-serif;
@@ -59,9 +60,8 @@ body {
     /* 62%=10px=1rem */
     font-size: 62.5%;
     line-height: 1.5;
-    /* text rendering */
     -webkit-font-smoothing: antialiased;
-    background-color: #f4f6f6;
+    background-color: $color-white;
 }
 img,
 picture,
@@ -104,24 +104,46 @@ h6 {
     background-color: $color-white;
     padding: 3px;
     border-radius: $border-radius-small;
-    box-shadow: v$box-shadow-medium;
+    box-shadow: $box-shadow-centered;
+    margin: 3rem;
 }
-
-// CHALLENGE1
-.challenge-1 {
-    font-family: $font-family-calistoga;
-    background: $color-blue-violet;
-    background: linear-gradient(36deg, $color-blue-violet 0%, $color-blue-electric 85%);
-    border-radius: $border-radius-small;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.card {
+    margin: auto;
     position: relative;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 75%;
+    background-color: $color-white;
+    border-radius: $border-radius-small;
+    box-shadow: $box-shadow-right-bottom;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    &__right {
+        border-top-right-radius: $border-radius-small;
+        border-bottom-right-radius: $border-radius-small;
+        width: 35%;
+        background-color: $color-brown-pale-very-light;
+    }
+    &__header {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: $color-blue;
+        border-radius: $border-radius-small $border-radius-small 0 0;
+    }
 }
 
+// COMPONENTS
 .header {
     &_white {
         text-transform: uppercase;
@@ -145,7 +167,7 @@ h6 {
         text-transform: capitalize;
 
         &_medium {
-            font-weight: $font-weight-heavy;
+            font-weight: $font-weight-very-heavy;
             font-size: $font-size-small;
         }
         &_small {
@@ -157,6 +179,66 @@ h6 {
             font-weight: $font-weight-very-light;
         }
     }
+}
+.btn {
+    &__container {
+        margin-top: 1.4rem;
+    }
+    &_brown {
+        background-color: $color-white;
+        color: $color-brown-pale;
+        border: 1px solid $color-brown-pale;
+        border-radius: $border-radius-medium;
+        padding: 0.2rem 1.8rem;
+        font-size: $font-size-very-very-small;
+        font-weight: $font-weight-very-heavy;
+        margin: 0.3rem 2rem;
+        width: 9rem;
+
+        &:hover {
+            background-color: $color-brown-pale;
+            color: $color-white;
+        }
+    }
+}
+.photo {
+    &_circle {
+        z-index: 99;
+        border-style: solid;
+        border-width: 1px;
+        padding: 2px;
+        border-color: $color-brown-pale $color-brown-pale $color-brown-pale $color-white;
+        border-radius: $border-radius-round;
+        margin-bottom: $margin-bottom-small;
+
+        &_background {
+            position: absolute;
+            z-index: 2;
+            top: 2.03rem;
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: $border-radius-round;
+            background-color: $color-white;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $color-brown-pale $color-white $color-brown-pale $color-brown-pale;
+        }
+    }
+}
+
+// CHALLENGE1
+.challenge-1 {
+    font-family: $font-family-calistoga;
+    background: $color-blue-violet;
+    background: linear-gradient(36deg, $color-blue-violet 0%, $color-blue-electric 85%);
+    border-radius: $border-radius-small;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
 .number-container {
@@ -171,7 +253,7 @@ h6 {
         width: 1.7rem;
         height: 6rem;
         background-color: $color-white;
-        box-shadow: $box-shadow-medium;
+        box-shadow: $box-shadow-centered;
         border-radius: $border-radius-very-small;
 
         &:nth-child(1) {
@@ -189,7 +271,7 @@ h6 {
         border-radius: $border-radius-very-big;
         background-color: $color-black;
         border: 1.6rem solid white;
-        box-shadow: $box-shadow-medium;
+        box-shadow: $box-shadow-centered;
         margin-left: -1.1rem;
         z-index: 55;
 
@@ -225,7 +307,7 @@ h6 {
             height: 0.5rem;
             width: 5rem;
             border-radius: $border-radius-small;
-            box-shadow: $box-shadow-medium;
+            box-shadow: $box-shadow-centered;
             display: inline-block;
         }
         &::before,
@@ -261,7 +343,7 @@ h6 {
     &__checkbox:not(:checked) + &__button &__lines {
         transition: background-color 400ms ease-in 200ms, box-shadow 400ms ease-in 200ms;
         background-color: $color-white;
-        box-shadow: $box-shadow-medium;
+        box-shadow: $box-shadow-centered;
     }
     &__checkbox:not(:checked) + &__button &__lines:before {
         transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
@@ -287,90 +369,6 @@ h6 {
     flex-direction: column;
 }
 
-.card {
-    margin: auto;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    height: 75%;
-    background-color: $color-white;
-    border-radius: $border-radius-small;
-    box-shadow: $box-shadow-stronger;
-
-    &__left {
-        display: flex;
-        flex-direction: column;
-        width: 65%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-    &__right {
-        border-top-right-radius: $border-radius-small;
-        border-bottom-right-radius: $border-radius-small;
-        width: 35%;
-        background-color: $color-brown-pale-very-light;
-    }
-
-    &__header {
-        width: 100%;
-        height: 20%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: $color-blue;
-        border-radius: 3px 3px 0 0;
-    }
-}
-
-.photo {
-    &_circle {
-        z-index: 99;
-        border-style: solid;
-        border-width: 1px;
-        padding: 2px;
-        border-color: $color-brown-pale $color-brown-pale $color-brown-pale $color-white;
-        border-radius: $border-radius-round;
-        margin-bottom: $margin-bottom-small;
-
-        &_background {
-            position: absolute;
-            z-index: 2;
-            top: 2.03rem;
-            width: 4.8rem;
-            height: 4.8rem;
-            border-radius: $border-radius-round;
-            background-color: $color-white;
-            border-style: solid;
-            border-width: 1px;
-            border-color: $color-brown-pale $color-white $color-brown-pale $color-brown-pale;
-        }
-    }
-}
-
-.btn {
-    &__container {
-        margin-top: 1.4rem;
-    }
-    &_brown {
-        background-color: $color-white;
-        color: $color-brown-pale;
-        border: 1px solid $color-brown-pale;
-        border-radius: $border-radius-medium;
-        padding: 0.2rem 1.8rem;
-        font-size: $font-size-very-very-small;
-        font-weight: $font-weight-very-heavy;
-        margin: 0.3rem 2rem;
-        width: 9rem;
-
-        &:hover {
-            background-color: $color-brown-pale;
-            color: $color-white;
-        }
-    }
-}
-
 .block_brown {
     display: flex;
     flex-direction: column;
@@ -384,7 +382,7 @@ h6 {
     }
     &:hover {
         transition: 300ms ease-in;
-        background-color: $color-brown-pale-very-light;
+        background-color: $color-brown-pale-transparent;
     }
 }
 
