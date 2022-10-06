@@ -5,6 +5,7 @@ $color-blue-violet: rgb(66, 61, 153);
 $color-blue-electric: rgb(111, 194, 200);
 $color-blue-very-dark: rgb(38, 64, 87);
 $color-blue: rgb(95, 152, 205);
+$color-blue-light: rgb(178, 218, 255);
 $color-green-electric: rgb(96, 173, 133);
 $color-yellow-pale: rgb(230, 190, 119);
 $color-yellow-orangy: rgb(193, 129, 87);
@@ -133,6 +134,7 @@ h6 {
         background-color: $color-brown-pale-very-light;
     }
     &__header {
+        padding: 1rem;
         width: 100%;
         height: 20%;
         display: flex;
@@ -225,6 +227,12 @@ h6 {
         }
     }
 }
+.chackbox {
+    width: 1rem;
+    height: 1rem;
+    background-color: $color-blue;
+    border: 1 px solid white;
+}
 
 // CHALLENGE1
 .challenge-1 {
@@ -292,22 +300,18 @@ h6 {
     place-content: center;
 }
 
-.menu-burger-3 {
-    &__checkbox {
-        display: none;
-    }
-    &__lines {
+.menu-burger {
+    &__2 {
         position: relative;
         cursor: pointer;
 
         &,
         &::before,
         &::after {
-            background-color: $color-white;
-            height: 0.5rem;
-            width: 5rem;
+            background-color: $color-blue-light;
+            height: 0.2rem;
+            width: 1.5rem;
             border-radius: $border-radius-small;
-            box-shadow: $box-shadow-centered;
             display: inline-block;
         }
         &::before,
@@ -317,43 +321,80 @@ h6 {
             left: 0;
         }
         &::before {
-            top: -1.4rem;
+            width: 0.4rem;
+            height: 0.4rem;
+            top: -0.1rem;
+            left: 1.7rem;
         }
         &::after {
-            top: 1.4rem;
+            top: 0.8rem;
+            width: 2.1rem;
         }
     }
 
-    &__checkbox:checked + &__button &__lines {
-        transition-property: background-color, box-shadow;
-        transition-duration: 300ms;
-        background-color: transparent;
-        box-shadow: none;
-    }
-    &__checkbox:checked + &__button &__lines:before {
-        transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
-        top: 0;
-        transform: rotate(45deg);
-    }
-    &__checkbox:checked + &__button &__lines:after {
-        transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
-        top: 0;
-        transform: rotate(135deg);
-    }
-    &__checkbox:not(:checked) + &__button &__lines {
-        transition: background-color 400ms ease-in 200ms, box-shadow 400ms ease-in 200ms;
-        background-color: $color-white;
-        box-shadow: $box-shadow-centered;
-    }
-    &__checkbox:not(:checked) + &__button &__lines:before {
-        transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
-        transform: rotate(0);
-        top: -1.4rem;
-    }
-    &__checkbox:not(:checked) + &__button &__lines::after {
-        transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
-        transform: rotate(0);
-        top: 1.4rem;
+    &__3 {
+        &__checkbox {
+            display: none;
+        }
+        &__lines {
+            position: relative;
+            cursor: pointer;
+
+            &,
+            &::before,
+            &::after {
+                background-color: $color-white;
+                height: 0.5rem;
+                width: 5rem;
+                border-radius: $border-radius-small;
+                box-shadow: $box-shadow-centered;
+                display: inline-block;
+            }
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+            }
+            &::before {
+                top: -1.4rem;
+            }
+            &::after {
+                top: 1.4rem;
+            }
+        }
+
+        &__checkbox:checked + &__button &__lines {
+            transition-property: background-color, box-shadow;
+            transition-duration: 300ms;
+            background-color: transparent;
+            box-shadow: none;
+        }
+        &__checkbox:checked + &__button &__lines:before {
+            transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
+            top: 0;
+            transform: rotate(45deg);
+        }
+        &__checkbox:checked + &__button &__lines:after {
+            transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
+            top: 0;
+            transform: rotate(135deg);
+        }
+        &__checkbox:not(:checked) + &__button &__lines {
+            transition: background-color 400ms ease-in 200ms, box-shadow 400ms ease-in 200ms;
+            background-color: $color-white;
+            box-shadow: $box-shadow-centered;
+        }
+        &__checkbox:not(:checked) + &__button &__lines:before {
+            transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
+            transform: rotate(0);
+            top: -1.4rem;
+        }
+        &__checkbox:not(:checked) + &__button &__lines::after {
+            transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
+            transform: rotate(0);
+            top: 1.4rem;
+        }
     }
 }
 
