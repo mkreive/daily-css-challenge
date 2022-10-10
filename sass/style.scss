@@ -178,6 +178,19 @@ h6 {
         }
     }
 
+    &_dark-gray {
+        color: $color-gray-light;
+        font-size: $font-size-very-very-small;
+        font-weight: $font-weight-heavy;
+        text-transform: capitalize;
+
+        &_light {
+            font-weight: $font-weight-light;
+            font-size: $font-size-very-very-small;
+            color: $color-gray-light;
+        }
+    }
+
     &_brown {
         color: $color-brown-pale;
         text-transform: capitalize;
@@ -478,7 +491,7 @@ h6 {
 
 .notifications {
     position: relative;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -487,6 +500,8 @@ h6 {
 }
 
 .notification {
+    flex-basis: 33.3%;
+
     &__date {
         display: flex;
         flex-direction: row;
@@ -498,7 +513,7 @@ h6 {
             height: 0.7rem;
             background-color: $color-white;
             border-radius: $border-radius-round;
-            border: 2px solid $color-blue;
+            border: 3px solid $color-blue;
         }
         &__date {
             display: inline-block;
@@ -510,8 +525,10 @@ h6 {
         }
     }
     &__text {
-        margin: 0.3rem;
+        margin-left: 0.25rem;
         padding-left: 1rem;
         border-left: 3px solid $color-gray-very-light;
+        height: 75%;
+        overflow: hidden;
     }
 }

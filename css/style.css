@@ -111,6 +111,16 @@ h6 {
     text-transform: capitalize;
     font-weight: 500; }
 
+.header_dark-gray {
+  color: #666666;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize; }
+  .header_dark-gray_light {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #666666; }
+
 .header_brown {
   color: #756553;
   text-transform: capitalize; }
@@ -348,33 +358,36 @@ h6 {
 
 .notifications {
   position: relative;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   justify-content: space-between; }
 
-.notification__date {
-  display: flex;
-  flex-direction: row;
-  align-items: center; }
-  .notification__date__dot {
-    display: inline-block;
-    width: 0.7rem;
-    height: 0.7rem;
-    background-color: white;
-    border-radius: 50%;
-    border: 2px solid #5f98cd; }
-  .notification__date__date {
-    display: inline-block;
-    text-transform: capitalize;
-    margin-left: 0.7rem;
-    color: #666666;
-    font-size: 0.7rem;
-    font-weight: 500; }
-
-.notification__text {
-  margin: 0.3rem;
-  padding-left: 1rem;
-  border-left: 3px solid #ebebeb; }
+.notification {
+  flex-basis: 33.3%; }
+  .notification__date {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .notification__date__dot {
+      display: inline-block;
+      width: 0.7rem;
+      height: 0.7rem;
+      background-color: white;
+      border-radius: 50%;
+      border: 3px solid #5f98cd; }
+    .notification__date__date {
+      display: inline-block;
+      text-transform: capitalize;
+      margin-left: 0.7rem;
+      color: #666666;
+      font-size: 0.7rem;
+      font-weight: 500; }
+  .notification__text {
+    margin-left: 0.25rem;
+    padding-left: 1rem;
+    border-left: 3px solid #ebebeb;
+    height: 75%;
+    overflow: hidden; }
