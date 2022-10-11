@@ -4,10 +4,12 @@ $color-black: rgba(255, 255, 255, 0);
 $color-blue-violet: rgb(66, 61, 153);
 $color-blue-electric: rgb(111, 194, 200);
 $color-blue-very-dark: rgb(38, 64, 87);
+$color-blue-dark: rgb(59, 110, 135);
 $color-blue: rgb(95, 152, 205);
 $color-blue-darkened: rgb(88, 141, 191);
 $color-blue-light: rgb(178, 218, 255);
 $color-blue-grayish: rgb(74, 98, 123);
+$color-blue-clear-light: rgb(76, 182, 222);
 $color-green-electric: rgb(96, 173, 133);
 $color-yellow-pale: rgb(230, 190, 119);
 $color-yellow-orangy: rgb(193, 129, 87);
@@ -29,6 +31,7 @@ $box-shadow-right-bottom: 12px 10px 10px 0px rgba(0, 0, 0, 0.2);
 $font-family-calistoga: 'Calistoga', cursive;
 $font-family-opensans: 'Open Sans', sans-serif;
 
+$font-size-very-huge: 10rem;
 $font-size-huge: 4rem;
 $font-size-medium: 1.4rem;
 $font-size-small: 1.2rem;
@@ -97,7 +100,6 @@ h6 {
 .container {
     width: 100vw;
     height: 100vh;
-    padding: 3rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -185,6 +187,9 @@ h6 {
             padding-left: 0.5rem;
             font-size: $font-size-medium;
             font-weight: $font-weight-lightest;
+        }
+        &_smaller {
+            font-size: $font-size-very-small;
         }
         &_small {
             font-size: $font-size-very-small;
@@ -352,6 +357,14 @@ h6 {
         opacity: 100;
         top: 0.9rem;
         left: 1rem;
+    }
+}
+.text {
+    &_white {
+        color: $color-white;
+        font-size: $font-size-medium;
+        font-weight: $font-weight-light;
+        line-height: 2.2rem;
     }
 }
 
@@ -627,5 +640,59 @@ h6 {
         border-left: 3px solid $color-gray-very-light;
         height: 75%;
         overflow: hidden;
+    }
+}
+
+// CHALLENGE-5
+.challenge-5 {
+    font-family: $font-family-opensans;
+    background-color: $color-blue-clear-light;
+    border-radius: $border-radius-small;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: flex-end;
+}
+.quotes {
+    font-family: $font-family-calistoga;
+    color: rgba(255, 255, 255, 0.22);
+    font-size: $font-size-very-huge;
+    position: absolute;
+    top: 36rem;
+    margin-left: -1.5rem;
+}
+
+.explanation {
+    // visibility: hidden;
+    position: absolute;
+    display: inline-block;
+    top: 36rem;
+    width: 20rem;
+    height: 8rem;
+    background-color: $color-blue-dark;
+    margin-left: -6rem;
+
+    &__word {
+        background-color: $color-blue-dark;
+        padding: 0.3rem;
+        cursor: pointer;
+    }
+    &__header {
+        display: inline-block;
+        background-color: $color-white;
+        width: 100%;
+        height: auto;
+        color: $color-blue-dark;
+        font-size: $font-size-very-small;
+        padding-left: 0.8rem;
+    }
+    &__body {
+        display: block;
+        padding: 0.8rem;
+        font-size: $font-size-very-very-small;
+        color: $color-white;
+        line-height: normal;
     }
 }

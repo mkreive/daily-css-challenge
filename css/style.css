@@ -43,7 +43,6 @@ h6 {
 .container {
   width: 100vw;
   height: 100vh;
-  padding: 3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -119,6 +118,8 @@ h6 {
     padding-left: 0.5rem;
     font-size: 1.4rem;
     font-weight: 100; }
+  .header_white_smaller {
+    font-size: 1rem; }
   .header_white_small {
     font-size: 1rem;
     text-transform: capitalize;
@@ -257,6 +258,12 @@ h6 {
     opacity: 100;
     top: 0.9rem;
     left: 1rem; }
+
+.text_white {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.2rem; }
 
 .hidden {
   display: none; }
@@ -462,3 +469,49 @@ h6 {
     border-left: 3px solid #ebebeb;
     height: 75%;
     overflow: hidden; }
+
+.challenge-5 {
+  font-family: "Open Sans", sans-serif;
+  background-color: #4cb6de;
+  border-radius: 0.3rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: flex-end; }
+
+.quotes {
+  font-family: "Calistoga", cursive;
+  color: rgba(255, 255, 255, 0.22);
+  font-size: 10rem;
+  position: absolute;
+  top: 36rem;
+  margin-left: -1.5rem; }
+
+.explanation {
+  position: absolute;
+  display: inline-block;
+  top: 36rem;
+  width: 20rem;
+  height: 8rem;
+  background-color: #3b6e87;
+  margin-left: -6rem; }
+  .explanation__word {
+    background-color: #3b6e87;
+    padding: 0.3rem;
+    cursor: pointer; }
+  .explanation__header {
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    color: #3b6e87;
+    font-size: 1rem;
+    padding-left: 0.8rem; }
+  .explanation__body {
+    display: block;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    color: white;
+    line-height: normal; }
