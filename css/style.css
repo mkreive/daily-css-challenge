@@ -492,12 +492,14 @@ h6 {
 .explanation {
   opacity: 0;
   position: absolute;
-  right: 45rem;
+  right: 48rem;
   display: block;
-  width: 22rem;
+  width: 18rem;
   height: fit-content;
   background-color: #3b6e87;
-  margin-top: -9rem; }
+  margin-top: -10.3rem;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  border: 5px ridged white; }
   .explanation__word {
     background-color: #3b6e87;
     padding: 0.3rem;
@@ -521,3 +523,12 @@ h6 {
     font-size: 0.8rem;
     color: white;
     line-height: normal; }
+
+.tip {
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 20px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #3b6e87; }
