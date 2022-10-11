@@ -490,28 +490,34 @@ h6 {
   margin-left: -1.5rem; }
 
 .explanation {
+  opacity: 0;
   position: absolute;
-  display: inline-block;
-  top: 36rem;
-  width: 20rem;
-  height: 8rem;
+  right: 45rem;
+  display: block;
+  width: 22rem;
+  height: fit-content;
   background-color: #3b6e87;
-  margin-left: -6rem; }
+  margin-top: -9rem; }
   .explanation__word {
     background-color: #3b6e87;
     padding: 0.3rem;
     cursor: pointer; }
+    .explanation__word:hover ~ span {
+      transition-property: opacity;
+      transition-duration: 500ms;
+      opacity: 100; }
   .explanation__header {
-    display: inline-block;
+    display: block;
     background-color: white;
     width: 100%;
     height: auto;
     color: #3b6e87;
     font-size: 1rem;
-    padding-left: 0.8rem; }
+    padding: 0.3rem 0.3rem 0.3rem 1rem;
+    line-height: normal; }
   .explanation__body {
     display: block;
-    padding: 0.8rem;
+    padding: 1rem;
     font-size: 0.8rem;
     color: white;
     line-height: normal; }
