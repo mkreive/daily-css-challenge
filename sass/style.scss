@@ -104,6 +104,7 @@ h6 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 2rem 5rem;
 }
 .wrapper {
     display: block;
@@ -113,7 +114,7 @@ h6 {
     padding: 3px;
     border-radius: $border-radius-small;
     box-shadow: $box-shadow-centered;
-    margin: 3rem;
+    margin: 2rem;
     overflow: hidden;
 }
 .card {
@@ -166,8 +167,8 @@ h6 {
         border-radius: $border-radius-small;
         box-shadow: $box-shadow-right-bottom;
         z-index: 4;
-        top: 41rem;
-        left: 9rem;
+        top: 37rem;
+        margin-left: 2rem;
     }
 }
 
@@ -301,7 +302,7 @@ h6 {
         &_background {
             position: absolute;
             z-index: 2;
-            top: 2.03rem;
+            top: 1.96rem;
             width: 4.8rem;
             height: 4.8rem;
             border-radius: $border-radius-round;
@@ -660,7 +661,7 @@ h6 {
     color: rgba(255, 255, 255, 0.22);
     font-size: $font-size-very-huge;
     position: absolute;
-    top: 36rem;
+    top: 35rem;
     margin-left: -1.5rem;
 }
 
