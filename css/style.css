@@ -57,7 +57,8 @@ h6 {
   padding: 3px;
   border-radius: 0.3rem;
   box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  margin: 3rem; }
+  margin: 3rem;
+  overflow: hidden; }
 
 .card {
   margin: auto;
@@ -95,7 +96,6 @@ h6 {
     background-color: #5f98cd;
     border-radius: 0.3rem 0.3rem 0 0; }
   .card_blue {
-    display: none;
     position: absolute;
     flex-direction: column;
     width: 15rem;
@@ -105,7 +105,7 @@ h6 {
     box-shadow: 12px 10px 10px 0px rgba(0, 0, 0, 0.2);
     z-index: 4;
     top: 41rem;
-    left: 12rem; }
+    left: 9rem; }
 
 .header_white {
   text-transform: uppercase;
@@ -197,16 +197,16 @@ h6 {
   height: 1.1rem;
   width: 1.1rem;
   background-color: #5f98cd;
-  border: 2px solid #b2daff; }
+  border: 2.7px solid #b2daff; }
 
 .checkbox:hover input ~ .checkbox__checkmark {
   transition: all 200ms;
-  border: 2px solid white; }
+  border: 2.7px solid white; }
 
 .checkbox:has(input:checked) ~ label {
   transition: all 200ms ease-in;
-  visibility: hidden;
-  left: 2.8rem; }
+  left: 2.8rem;
+  opacity: 0; }
 
 .search-bar {
   position: relative;
@@ -222,9 +222,16 @@ h6 {
   .search-bar__label {
     transition: all 200ms ease-in;
     position: absolute;
+    opacity: 100;
     top: 0.9rem;
-    left: 1rem;
-    visibility: visible; }
+    left: 1rem; }
+
+.hidden {
+  display: none; }
+
+.shift {
+  transition: all 500ms ease-in-out;
+  transform: translateX(10rem); }
 
 .challenge-1 {
   font-family: "Calistoga", cursive;
@@ -279,86 +286,78 @@ h6 {
   display: grid;
   place-content: center; }
 
-.menu-burger__2 {
-  z-index: 66;
-  position: relative;
-  cursor: pointer;
-  top: -0.3rem; }
-  .menu-burger__2:hover {
-    background-color: white; }
-  .menu-burger__2:hover::before, .menu-burger__2:hover::after {
-    background-color: white; }
-  .menu-burger__2, .menu-burger__2::before, .menu-burger__2::after {
-    background-color: #b2daff;
-    height: 0.25rem;
-    width: 1.5rem;
-    border-radius: 0.3rem;
-    display: inline-block; }
-  .menu-burger__2::before, .menu-burger__2::after {
-    content: '';
-    position: absolute;
-    left: 0; }
-  .menu-burger__2::before {
-    width: 0.4rem;
-    height: 0.4rem;
-    top: -0.1rem;
-    left: 1.7rem; }
-  .menu-burger__2::after {
-    top: 0.8rem;
-    width: 2.1rem; }
-
-.menu-burger__3__checkbox {
-  display: none; }
-
-.menu-burger__3__lines {
-  position: relative;
+.menu-burger {
   cursor: pointer; }
-  .menu-burger__3__lines, .menu-burger__3__lines::before, .menu-burger__3__lines::after {
+  .menu-burger__2 {
+    position: relative;
+    top: -0.3rem; }
+    .menu-burger__2:hover {
+      background-color: white; }
+    .menu-burger__2:hover::before, .menu-burger__2:hover::after {
+      background-color: white; }
+    .menu-burger__2, .menu-burger__2::before, .menu-burger__2::after {
+      cursor: pointer;
+      background-color: #b2daff;
+      height: 0.22rem;
+      width: 1.5rem;
+      border-radius: 0.3rem; }
+    .menu-burger__2::before, .menu-burger__2::after {
+      content: '';
+      position: absolute;
+      left: 0; }
+    .menu-burger__2::before {
+      width: 0.4rem;
+      height: 0.4rem;
+      top: -0.1rem;
+      left: 1.7rem; }
+    .menu-burger__2::after {
+      top: 0.7rem;
+      width: 2.1rem; }
+  .menu-burger__3__checkbox {
+    display: none; }
+  .menu-burger__3__lines {
+    position: relative;
+    cursor: pointer; }
+    .menu-burger__3__lines, .menu-burger__3__lines::before, .menu-burger__3__lines::after {
+      background-color: white;
+      height: 0.5rem;
+      width: 5rem;
+      border-radius: 0.3rem;
+      box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+      display: inline-block; }
+    .menu-burger__3__lines::before, .menu-burger__3__lines::after {
+      content: '';
+      position: absolute;
+      left: 0; }
+    .menu-burger__3__lines::before {
+      top: -1.4rem; }
+    .menu-burger__3__lines::after {
+      top: 1.4rem; }
+  .menu-burger__3__checkbox:checked + .menu-burger__3__button .menu-burger__3__lines {
+    transition-property: background-color, box-shadow;
+    transition-duration: 300ms;
+    background-color: transparent;
+    box-shadow: none; }
+  .menu-burger__3__checkbox:checked + .menu-burger__3__button .menu-burger__3__lines:before {
+    transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
+    top: 0;
+    transform: rotate(45deg); }
+  .menu-burger__3__checkbox:checked + .menu-burger__3__button .menu-burger__3__lines:after {
+    transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
+    top: 0;
+    transform: rotate(135deg); }
+  .menu-burger__3__checkbox:not(:checked) + .menu-burger__3__button .menu-burger__3__lines {
+    transition: background-color 400ms ease-in 200ms, box-shadow 400ms ease-in 200ms;
     background-color: white;
-    height: 0.5rem;
-    width: 5rem;
-    border-radius: 0.3rem;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    display: inline-block; }
-  .menu-burger__3__lines::before, .menu-burger__3__lines::after {
-    content: '';
-    position: absolute;
-    left: 0; }
-  .menu-burger__3__lines::before {
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3); }
+  .menu-burger__3__checkbox:not(:checked) + .menu-burger__3__button .menu-burger__3__lines:before {
+    transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
+    transform: rotate(0);
     top: -1.4rem; }
-  .menu-burger__3__lines::after {
+  .menu-burger__3__checkbox:not(:checked) + .menu-burger__3__button .menu-burger__3__lines::after {
+    transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
+    transform: rotate(0);
     top: 1.4rem; }
-
-.menu-burger__3__checkbox:checked + .menu-burger__3__button .menu-burger__3__lines {
-  transition-property: background-color, box-shadow;
-  transition-duration: 300ms;
-  background-color: transparent;
-  box-shadow: none; }
-
-.menu-burger__3__checkbox:checked + .menu-burger__3__button .menu-burger__3__lines:before {
-  transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
-  top: 0;
-  transform: rotate(45deg); }
-
-.menu-burger__3__checkbox:checked + .menu-burger__3__button .menu-burger__3__lines:after {
-  transition: top 300ms ease-in-out, transform 300ms ease-in 400ms;
-  top: 0;
-  transform: rotate(135deg); }
-
-.menu-burger__3__checkbox:not(:checked) + .menu-burger__3__button .menu-burger__3__lines {
-  transition: background-color 400ms ease-in 200ms, box-shadow 400ms ease-in 200ms;
-  background-color: white;
-  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3); }
-
-.menu-burger__3__checkbox:not(:checked) + .menu-burger__3__button .menu-burger__3__lines:before {
-  transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
-  transform: rotate(0);
-  top: -1.4rem; }
-
-.menu-burger__3__checkbox:not(:checked) + .menu-burger__3__button .menu-burger__3__lines::after {
-  transition: transform 300ms ease-in, top 300ms ease-in-out 300ms;
-  transform: rotate(0);
-  top: 1.4rem; }
 
 .challenge-3 {
   font-family: "Open Sans", sans-serif;

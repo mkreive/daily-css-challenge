@@ -112,6 +112,7 @@ h6 {
     border-radius: $border-radius-small;
     box-shadow: $box-shadow-centered;
     margin: 3rem;
+    overflow: hidden;
 }
 .card {
     margin: auto;
@@ -155,7 +156,6 @@ h6 {
         border-radius: $border-radius-small $border-radius-small 0 0;
     }
     &_blue {
-        display: none;
         position: absolute;
         flex-direction: column;
         width: 15rem;
@@ -165,7 +165,7 @@ h6 {
         box-shadow: $box-shadow-right-bottom;
         z-index: 4;
         top: 41rem;
-        left: 12rem;
+        left: 9rem;
     }
 }
 
@@ -283,17 +283,17 @@ h6 {
         height: 1.1rem;
         width: 1.1rem;
         background-color: $color-blue;
-        border: 2px solid $color-blue-light;
+        border: 2.7px solid $color-blue-light;
     }
     &:hover input ~ &__checkmark {
         transition: all 200ms;
-        border: 2px solid $color-white;
+        border: 2.7px solid $color-white;
     }
 }
 .checkbox:has(input:checked) ~ label {
     transition: all 200ms ease-in;
-    visibility: hidden;
     left: 2.8rem;
+    opacity: 0;
 }
 
 .search-bar {
@@ -311,10 +311,20 @@ h6 {
     &__label {
         transition: all 200ms ease-in;
         position: absolute;
+        opacity: 100;
         top: 0.9rem;
         left: 1rem;
-        visibility: visible;
     }
+}
+
+// STATE CLASSES
+.hidden {
+    display: none;
+}
+
+.shift {
+    transition: all 500ms ease-in-out;
+    transform: translateX(10rem);
 }
 
 // CHALLENGE1
@@ -384,10 +394,10 @@ h6 {
 }
 
 .menu-burger {
+    cursor: pointer;
+
     &__2 {
-        z-index: 66;
         position: relative;
-        cursor: pointer;
         top: -0.3rem;
 
         &:hover {
@@ -401,11 +411,11 @@ h6 {
         &,
         &::before,
         &::after {
+            cursor: pointer;
             background-color: $color-blue-light;
-            height: 0.25rem;
+            height: 0.22rem;
             width: 1.5rem;
             border-radius: $border-radius-small;
-            display: inline-block;
         }
         &::before,
         &::after {
@@ -420,7 +430,7 @@ h6 {
             left: 1.7rem;
         }
         &::after {
-            top: 0.8rem;
+            top: 0.7rem;
             width: 2.1rem;
         }
     }
