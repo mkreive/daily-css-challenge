@@ -167,8 +167,8 @@ h6 {
         border-radius: $border-radius-small;
         box-shadow: $box-shadow-right-bottom;
         z-index: 4;
-        top: 37rem;
-        margin-left: 2rem;
+        top: 4rem;
+        margin-left: 2.5rem;
     }
 }
 
@@ -582,8 +582,10 @@ h6 {
     }
 }
 
-/* CHALLENGE 4*/
+// CHALLENGE-4
+
 .challenge-4 {
+    position: relative;
     font-family: $font-family-opensans;
     background-color: $color-blue-very-dark;
     border-radius: $border-radius-small;
@@ -646,6 +648,7 @@ h6 {
 
 // CHALLENGE-5
 .challenge-5 {
+    position: relative;
     font-family: $font-family-opensans;
     background-color: $color-blue-clear-light;
     border-radius: $border-radius-small;
@@ -661,21 +664,21 @@ h6 {
     color: rgba(255, 255, 255, 0.22);
     font-size: $font-size-very-huge;
     position: absolute;
-    top: 35rem;
+    top: 1.5rem;
     margin-left: -1.5rem;
 }
 
 .explanation {
+    top: 2.8rem;
     opacity: 0;
     position: absolute;
-    right: 48rem;
     display: block;
     width: 18rem;
     height: fit-content;
     background-color: $color-blue-dark;
-    margin-top: -10.3rem;
     box-shadow: $box-shadow-centered;
     border: 5px ridged white;
+    margin-left: 2rem;
 
     &__word {
         background-color: $color-blue-dark;
