@@ -223,6 +223,44 @@ h6 {
             font-weight: $font-weight-very-light;
         }
     }
+    &_blue {
+        color: $color-blue;
+        text-transform: capitalize;
+        font-size: $font-size-very-very-small;
+        font-weight: $font-weight-medium;
+    }
+}
+.nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+
+    &__row {
+        width: 100%;
+        height: 2.5rem;
+        list-style: none;
+        padding-left: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: all 200ms ease-in;
+
+        &:hover {
+            background-color: $color-blue-very-dark;
+        }
+
+        &__square {
+            position: relative;
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: transparent;
+            border: 2px solid $color-blue;
+            margin-right: $margin-bottom-small;
+        }
+    }
 }
 .btn {
     &__container {
