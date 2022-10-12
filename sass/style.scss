@@ -34,7 +34,7 @@ $font-family-opensans: 'Open Sans', sans-serif;
 
 $font-size-very-huge: 10rem;
 $font-size-huge: 4rem;
-$font-size-big: 2rem;
+$font-size-big: 1.9rem;
 $font-size-medium: 1.4rem;
 $font-size-small: 1.2rem;
 $font-size-very-small: 1rem;
@@ -292,6 +292,8 @@ h6 {
     }
     &_add {
         position: absolute;
+        left: 40%;
+        top: 40%;
         display: block;
         background-color: $color-red-salmon;
         width: 3rem;
@@ -299,6 +301,7 @@ h6 {
         border-radius: $border-radius-round;
         color: $color-white;
         font-size: $font-size-big;
+        text-align: center;
     }
 }
 .photo {
@@ -307,15 +310,28 @@ h6 {
         height: 100%;
         display: flex;
         flex-wrap: wrap;
+        background-color: red;
 
         &__box {
+            position: relative;
             flex-basis: 50%;
-            padding: 0.3rem;
+
+            background-color: green;
+
             &:hover {
                 cursor: pointer;
                 background-color: black;
             }
         }
+    }
+
+    &_square {
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        display: none;
+        box-shadow: inset 2px yellow;
     }
 
     &_circle {
