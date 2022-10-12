@@ -199,17 +199,17 @@ h6 {
     color: white; }
 
 .btn_add {
-  position: absolute;
-  left: 40%;
-  top: 40%;
   display: block;
   background-color: #ec6565;
-  width: 3rem;
-  height: 3rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   color: white;
-  font-size: 1.9rem;
-  text-align: center; }
+  font-size: 3rem;
+  text-align: center;
+  border: none;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer; }
 
 .photo__wrapper {
   width: 100%;
@@ -217,17 +217,32 @@ h6 {
   display: flex;
   flex-wrap: wrap; }
   .photo__wrapper__box {
+    cursor: pointer;
+    position: relative;
     flex-basis: 50%;
-    border: 0.2rem solid white;
-    overflow: hidden; }
-    .photo__wrapper__box:hover {
-      cursor: pointer;
-      background-color: rgba(0, 0, 0, 0.274); }
+    border: 0.2rem solid white; }
+    .photo__wrapper__box:hover img {
+      transition: all 600ms ease;
+      filter: brightness(50%); }
+    .photo__wrapper__box:hover div {
+      opacity: 1;
+      transition: all 500ms ease-in-out;
+      transform: scale(0.5); }
+    .photo__wrapper__box__overlay {
+      opacity: 0;
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      z-index: 99; }
 
 .photo_square {
   width: 100%;
   height: 100%;
-  object-fit: cover; }
+  object-fit: cover;
+  backface-visibility: hidden;
+  z-index: 4; }
 
 .photo_circle {
   z-index: 99;
@@ -287,7 +302,7 @@ h6 {
   .search-bar__label {
     transition: all 200ms ease-in;
     position: absolute;
-    opacity: 100;
+    opacity: 1;
     top: 0.9rem;
     left: 1rem; }
 
@@ -540,7 +555,7 @@ h6 {
     .explanation__word:hover ~ span {
       transition-property: opacity;
       transition-duration: 500ms;
-      opacity: 100; }
+      opacity: 1; }
   .explanation__header {
     display: block;
     background-color: white;

@@ -10,3 +10,12 @@ menuBurger.addEventListener('click', function () {
     hiddenNav.classList.toggle('hidden');
     movingCard.classList.toggle('shift');
 });
+
+// CHALLENGE-6
+const btnAdd = document.querySelectorAll('.btn_add');
+
+btnAdd.forEach((btn) =>
+    btn.addEventListener('click', function (e) {
+        const photoUrl = e.target.parentElement.nextSibling.nextElementSibling.currentSrc;
+    })
+);

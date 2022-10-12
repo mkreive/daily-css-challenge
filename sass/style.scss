@@ -34,6 +34,7 @@ $font-family-opensans: 'Open Sans', sans-serif;
 
 $font-size-very-huge: 10rem;
 $font-size-huge: 4rem;
+$font-size-very-big: 3rem;
 $font-size-big: 1.9rem;
 $font-size-medium: 1.4rem;
 $font-size-small: 1.2rem;
@@ -290,18 +291,19 @@ h6 {
             color: $color-white;
         }
     }
+
     &_add {
-        position: absolute;
-        left: 40%;
-        top: 40%;
         display: block;
         background-color: $color-red-salmon;
-        width: 3rem;
-        height: 3rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: $border-radius-round;
         color: $color-white;
-        font-size: $font-size-big;
+        font-size: $font-size-very-big;
         text-align: center;
+        border: none;
+        box-shadow: $box-shadow-centered;
+        cursor: pointer;
     }
 }
 .photo {
@@ -312,13 +314,28 @@ h6 {
         flex-wrap: wrap;
 
         &__box {
+            cursor: pointer;
+            position: relative;
             flex-basis: 50%;
             border: 0.2rem solid $color-white;
-            overflow: hidden;
 
-            &:hover {
-                cursor: pointer;
-                background-color: rgba(0, 0, 0, 0.274);
+            &:hover img {
+                transition: all 600ms ease;
+                filter: brightness(50%);
+            }
+            &:hover div {
+                opacity: 1;
+                transition: all 500ms ease-in-out;
+                transform: scale(0.5);
+            }
+            &__overlay {
+                opacity: 0;
+                position: absolute;
+                display: grid;
+                place-items: center;
+                width: 100%;
+                height: 100%;
+                z-index: 99;
             }
         }
     }
@@ -327,6 +344,8 @@ h6 {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        backface-visibility: hidden;
+        z-index: 4;
     }
 
     &_circle {
@@ -394,7 +413,7 @@ h6 {
     &__label {
         transition: all 200ms ease-in;
         position: absolute;
-        opacity: 100;
+        opacity: 1;
         top: 0.9rem;
         left: 1rem;
     }
@@ -727,7 +746,7 @@ h6 {
         &:hover ~ span {
             transition-property: opacity;
             transition-duration: 500ms;
-            opacity: 100;
+            opacity: 1;
         }
     }
     &__header {
