@@ -597,19 +597,27 @@ h6 {
   height: 100%;
   transition: all 600ms ease; }
   .overlay__back {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%; }
     .overlay__back__photo {
-      position: relative;
-      top: 13rem;
+      transition: all 1s ease-in-out;
+      position: absolute;
       width: 100%;
-      transform: translateY(13rem); }
+      height: 0;
+      top: -100%; }
     .overlay__back__background {
-      position: relative;
+      transition: all 1s ease-in-out;
+      position: absolute;
       background-color: #ec6565;
-      height: 100%;
       width: 100%;
-      bottom: 17rem;
-      transform: translateY(-17rem); }
+      height: 45%;
+      bottom: -100%; }
+    .overlay__back:hover > img {
+      top: 0;
+      height: 45%; }
+    .overlay__back:hover > div {
+      bottom: 0;
+      height: 55%; }
