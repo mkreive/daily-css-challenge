@@ -217,10 +217,11 @@ h6 {
   display: flex;
   flex-wrap: wrap; }
   .photo__wrapper__box {
+    transition: all 500ms ease;
     cursor: pointer;
     position: relative;
     flex-basis: 50%;
-    border: 0.2rem solid white; }
+    border: 0.1rem solid white; }
     .photo__wrapper__box:hover img {
       transition: all 600ms ease;
       filter: brightness(50%); }
@@ -229,6 +230,7 @@ h6 {
       transition: all 500ms ease-in-out;
       transform: scale(0.5); }
     .photo__wrapper__box__overlay {
+      transition: all 600ms ease;
       opacity: 0;
       position: absolute;
       display: grid;
@@ -584,4 +586,30 @@ h6 {
 .challenge-6 {
   position: relative;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
+
+.overlay {
+  z-index: 100;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 600ms ease; }
+  .overlay__back {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%; }
+    .overlay__back__photo {
+      position: relative;
+      top: 13rem;
+      width: 100%;
+      transform: translateY(13rem); }
+    .overlay__back__background {
+      position: relative;
+      background-color: #ec6565;
+      height: 100%;
+      width: 100%;
+      bottom: 17rem;
+      transform: translateY(-17rem); }
