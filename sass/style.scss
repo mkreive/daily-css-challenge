@@ -200,6 +200,14 @@ h6 {
             text-transform: capitalize;
             font-weight: $font-weight-medium;
         }
+        &_name {
+            text-transform: capitalize;
+            z-index: 99;
+            font-family: $font-family-opensans;
+            color: $color-white;
+            font-size: $font-size-very-small;
+            font-weight: $font-weight-medium;
+        }
     }
 
     &_dark-gray {
@@ -304,6 +312,20 @@ h6 {
         border: none;
         box-shadow: $box-shadow-centered;
         cursor: pointer;
+    }
+    &__exit {
+        display: block;
+        background-color: $color-red-salmon;
+        width: 6rem;
+        height: 6rem;
+        border-radius: $border-radius-round;
+        color: $color-white;
+        font-size: $font-size-very-big;
+        text-align: center;
+        border: none;
+        box-shadow: $box-shadow-centered;
+        cursor: pointer;
+        z-index: 99;
     }
 }
 .photo {
@@ -794,6 +816,7 @@ h6 {
     width: 100%;
     height: 100%;
     transition: all 600ms ease;
+    overflow: hidden;
 
     &__back {
         position: relative;
@@ -806,24 +829,68 @@ h6 {
             transition: all 1s ease-in-out;
             position: absolute;
             width: 100%;
-            height: 0;
-            top: -100%;
+            top: 0;
+            height: 45%;
+            z-index: 56;
         }
         &__background {
             transition: all 1s ease-in-out;
             position: absolute;
             background-color: $color-red-salmon;
             width: 100%;
-            height: 45%;
-            bottom: -100%;
-        }
-        &:hover > img {
-            top: 0;
-            height: 45%;
-        }
-        &:hover > div {
             bottom: 0;
             height: 55%;
+            z-index: 55;
         }
+    }
+    &__front {
+        z-index: 999;
+        margin-top: -100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 1rem;
+
+        &__photo {
+            z-index: 999;
+            width: 25%;
+            border-radius: $border-radius-round;
+            border: 2px solid $color-white;
+        }
+    }
+    &_hidden {
+        visibility: hidden;
+    }
+    &_hidden &__back__photo {
+        transition: all 1s ease-in-out;
+        height: 0;
+        top: -100%;
+    }
+    &_hidden &__back__background {
+        transition: all 1s ease-in-out;
+        height: 45%;
+        bottom: -100%;
+    }
+    &_hidden &__front__photo {
+        transition: all 1s ease-in-out;
+        height: 0;
+        top: -0%;
+    }
+}
+.circles {
+    position: relative;
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+
+    &__circle {
+        width: 0.3rem;
+        height: 0.3rem;
+        display: inline-block;
+        background-color: transparent;
+        border: 1px solid $color-white;
     }
 }

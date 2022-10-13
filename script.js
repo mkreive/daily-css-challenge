@@ -16,8 +16,7 @@ const btnAdd = document.querySelectorAll('.btn_add');
 const overlay = document.querySelector('.overlay');
 
 btnAdd.forEach((btn) =>
-    btn.addEventListener('click', function (e) {
-        const photoUrl = e.target.parentElement.nextSibling.nextElementSibling.currentSrc;
-        overlay.classList.toggle('hidden');
+    btn.addEventListener('click', function () {
+        overlay.classList.toggle('overlay_hidden');
     })
 );
