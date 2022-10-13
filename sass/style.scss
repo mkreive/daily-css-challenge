@@ -315,7 +315,6 @@ h6 {
         cursor: pointer;
     }
     &__exit {
-        place-self: flex-end;
         display: block;
         background-color: $color-red-salmon;
         width: 3.3rem;
@@ -327,7 +326,6 @@ h6 {
         text-align: center;
         border: none;
         cursor: pointer;
-        z-index: 99;
         transition: all 400ms ease;
 
         &:hover {
@@ -816,81 +814,81 @@ h6 {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    transition: all 1.5s ease;
 }
 .overlay {
+    position: absolute;
     z-index: 100;
     top: 0;
-    position: absolute;
     width: 100%;
     height: 100%;
-    transition: all 600ms ease;
-    overflow: hidden;
 
-    &__back {
+    &__background {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
+        transition: top 1s ease;
         width: 100%;
-
-        &__photo {
-            transition: all 1s ease-in-out;
-            position: absolute;
-            width: 100%;
-            top: 0;
-            height: 45%;
-            z-index: 56;
-        }
-        &__background {
-            transition: all 1s ease-in-out;
-            position: absolute;
-            background-color: $color-red-salmon;
-            width: 100%;
-            bottom: 0;
-            height: 55%;
-            z-index: 55;
-        }
+        height: 45%;
+        top: -45%;
+        background-image: url(https://100dayscss.com/codepen/13-1-header.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 101;
     }
-    &__front {
-        z-index: 999;
-        margin-top: -100%;
+
+    &__top {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 90%;
+        transition: top 1.5s ease-out;
+        padding: 0.7rem;
         width: 100%;
-        padding: 0.8rem;
+        height: 45%;
+        top: 0;
+        display: flex;
+        justify-content: flex-end;
+        z-index: 102;
 
         &__photo {
-            margin-top: 3rem;
-            z-index: 999;
-            width: 27%;
+            position: relative;
+            z-index: 103;
+            width: 7.5rem;
+            height: 7.5rem;
+            margin-top: 7rem;
+            margin-right: 22%;
             border-radius: $border-radius-round;
             border: 2px solid $color-white;
-            place-self: center;
             box-shadow: $box-shadow-centered;
         }
+    }
+
+    &__bottom {
+        transition: bottom 1s ease;
+        position: relative;
+        background-color: $color-red-salmon;
+        width: 100%;
+        bottom: 45%;
+        height: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
     }
     &_hidden {
         visibility: hidden;
     }
-    &_hidden &__back__photo {
-        transition: all 1s ease-in-out;
-        height: 0;
+    &_hidden &__top {
+        transition: all 700ms ease;
         top: -100%;
     }
-    &_hidden &__back__background {
-        transition: all 1s ease-in-out;
-        height: 45%;
+    &_hidden &__background {
+        transition: all 1s ease;
+        top: -100%;
+    }
+    &_hidden &__bottom {
+        transition: all 1s ease;
         bottom: -100%;
     }
-    &_hidden &__front__photo {
-        transition: all 1s ease-in-out;
-        height: 0;
-        top: -0%;
-    }
 }
+
 .circles {
     position: relative;
     display: flex;

@@ -14,9 +14,13 @@ menuBurger.addEventListener('click', function () {
 // CHALLENGE-6
 const btnAdd = document.querySelectorAll('.btn_add');
 const overlay = document.querySelector('.overlay');
+const exitBtn = document.querySelector('.btn__exit');
 
 btnAdd.forEach((btn) =>
     btn.addEventListener('click', function () {
         overlay.classList.toggle('overlay_hidden');
     })
 );
+exitBtn.addEventListener('click', function () {
+    overlay.classList.toggle('overlay_hidden');
+});
