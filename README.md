@@ -7,6 +7,8 @@ I decided to improve my HTML/CSS knowledge by taking this daily challenge: https
 
 ![Thumbnail](https://res.cloudinary.com/kreiva/image/upload/v1665664569/Screenshot_2022-10-13_at_15.34.51_rzwrx4.png)
 
+Here is some preview in CodePen: [Go there](https://codepen.io/mkreive/pen/QWrVPEQ)
+
 This challenge is for those who want to improve their CSS skills. You can check every solution in codepen and compare. 
 Even though I thought my knowledge in CSS was quite good, with every new task I learned new things :) 
 
