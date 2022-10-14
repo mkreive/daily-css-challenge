@@ -705,33 +705,44 @@ h6 {
 
 .challenge-7 {
   position: relative;
+  display: grid;
+  place-items: center;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 .color-picker {
   position: relative;
-  width: 80%;
-  height: 20%;
-  margin-left: auto;
-  margin-top: auto;
+  width: 42%;
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
-  background-color: red;
+  align-items: center;
   z-index: 99; }
   .color-picker__dot {
-    width: 10rem;
-    height: 10rem;
-    cursor: pointer; }
+    position: absolute;
+    top: 0.29rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: white;
+    border-radius: 50%; }
+  .color-picker__label {
+    cursor: pointer;
+    background-color: transparent;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid white;
+    border-radius: 2px solid white;
+    border-radius: 50%; }
+    .color-picker__label input {
+      visibility: hidden;
+      width: 3rem;
+      height: 3rem; }
 
 .color__overlay {
-  width: 100%;
+  width: 300%;
   height: 100%;
   position: absolute;
-  top: 0; }
-  .color__overlay_purple {
-    background-color: #925eb1; }
-  .color__overlay_blue {
-    background-color: #5097d5; }
-  .color__overlay_mint {
-    background-color: #57b99d; }
+  top: 0;
+  left: 0;
+  background: #925eb1;
+  background: linear-gradient(90deg, #925eb1 0%, #925eb1 33.3%, #5097d5 33.3%, #5097d5 66.6%, #57b99d 66.6%, #57b99d 99.9%); }
