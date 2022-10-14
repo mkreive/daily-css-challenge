@@ -10,6 +10,7 @@ $color-blue-darkened: rgb(88, 141, 191);
 $color-blue-light: rgb(178, 218, 255);
 $color-blue-grayish: rgb(74, 98, 123);
 $color-blue-clear-light: rgb(76, 182, 222);
+$color-blue-clear: rgb(80, 151, 213);
 $color-green-electric: rgb(96, 173, 133);
 $color-yellow-pale: rgb(230, 190, 119);
 $color-yellow-orangy: rgb(193, 129, 87);
@@ -19,6 +20,8 @@ $color-brown-pale-very-light: rgb(243, 232, 224);
 $color-gray-very-light: rgb(235, 235, 235);
 $color-gray-light: rgb(102, 102, 102);
 $color-red-salmon: rgb(236, 101, 101);
+$color-purple: rgb(146, 94, 177);
+$color-mint: rgb(87, 185, 157);
 
 $border-radius-round: 50%;
 $border-radius-very-big: 3rem;
@@ -923,5 +926,44 @@ h6 {
                 border: 2px solid $color-red-salmon;
             }
         }
+    }
+}
+
+// CHALLENGE-7
+.challenge-7 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.color-picker {
+    position: relative;
+    width: 80%;
+    height: 20%;
+    margin-left: auto;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: red;
+    z-index: 99;
+    &__dot {
+        width: 10rem;
+        height: 10rem;
+        cursor: pointer;
+    }
+}
+.color__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    &_purple {
+        background-color: $color-purple;
+    }
+    &_blue {
+        background-color: $color-blue-clear;
+    }
+    &_mint {
+        background-color: $color-mint;
     }
 }
