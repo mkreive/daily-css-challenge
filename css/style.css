@@ -779,44 +779,49 @@ h6 {
 .challenge-8 {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background: #28404e;
   background: linear-gradient(172deg, #28404e 35%, #1c2e38 99%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   padding: 3.5rem;
   font-family: "Open Sans", sans-serif; }
   .challenge-8__headers {
-    height: 20%;
-    text-align: center; }
+    align-items: center; }
 
 .progress-circle {
   position: relative;
   width: 7rem;
-  height: 7rem; }
-  .progress-circle__middle {
-    position: absolute;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .progress-circle__inner {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 30%;
-    left: 28%; }
-  .progress-circle__container {
-    width: 100%;
-    height: 100%;
-    background-color: transparent; }
-  .progress-circle__bar {
-    width: 100%;
-    height: 100%;
+    justify-content: center;
+    background-color: green; }
+  .progress-circle__outer {
+    padding: 0.5rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
-    background-color: transparent;
-    border: 0.6rem solid #1b2a33; }
-  .progress-circle__fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; }
+    border: 0.6rem solid #1b2a33;
+    background-color: red; }
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+circle {
+  fill: none;
+  stroke: #20bd93;
+  stroke-width: 0.6rem;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 100; }
