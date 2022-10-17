@@ -713,13 +713,13 @@ h6 {
   .challenge-7__dot {
     position: absolute;
     z-index: 99;
-    top: 45.48%;
-    left: 30.15%;
+    top: 12.05rem;
+    left: 7.99rem;
     width: 2.4rem;
     height: 2.4rem;
     background-color: white;
     border-radius: 50%;
-    transition: all 700ms ease-out; }
+    transition: all 1s ease; }
   .challenge-7__background {
     width: 300%;
     height: 100%;
@@ -728,11 +728,15 @@ h6 {
     left: 0;
     background: #925eb1;
     background: linear-gradient(90deg, #925eb1 0%, #925eb1 33.3%, #5097d5 33.3%, #5097d5 66.6%, #57b99d 66.6%, #57b99d 99.9%);
-    transition: all 700ms ease-out; }
-  .challenge-7:has(input:hover) .challenge-7__dot {
-    transform: translateX(4.05rem); }
-  .challenge-7:has(input:hover) .challenge-7__background {
+    transition: all 1s ease; }
+  .challenge-7:has(#radio2:checked) .challenge-7__dot {
+    transform: translateX(169%); }
+  .challenge-7:has(#radio2:checked) .challenge-7__background {
     transform: translateX(-33.3%); }
+  .challenge-7:has(#radio3:checked) .challenge-7__dot {
+    transform: translateX(339%); }
+  .challenge-7:has(#radio3:checked) .challenge-7__background {
+    transform: translateX(-66.6%); }
 
 .color-picker {
   position: relative;

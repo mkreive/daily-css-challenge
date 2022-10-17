@@ -941,13 +941,13 @@ h6 {
     &__dot {
         position: absolute;
         z-index: 99;
-        top: 45.48%;
-        left: 30.15%;
+        top: 12.05rem;
+        left: 7.99rem;
         width: 2.4rem;
         height: 2.4rem;
         background-color: $color-white;
         border-radius: $border-radius-round;
-        transition: all 700ms ease-out;
+        transition: all 1s ease;
     }
 
     &__background {
@@ -966,15 +966,22 @@ h6 {
             $color-mint 66.6%,
             $color-mint 99.9%
         );
-        transition: all 700ms ease-out;
+        transition: all 1s ease;
     }
-    &:has(input:hover) &__dot {
-        transform: translateX(4.05rem);
+    &:has(#radio2:checked) &__dot {
+        transform: translateX(169%);
     }
-    &:has(input:hover) &__background {
+    &:has(#radio2:checked) &__background {
         transform: translateX(-33.3%);
     }
+    &:has(#radio3:checked) &__dot {
+        transform: translateX(339%);
+    }
+    &:has(#radio3:checked) &__background {
+        transform: translateX(-66.6%);
+    }
 }
+
 .color-picker {
     position: relative;
     width: 42%;
