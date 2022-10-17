@@ -710,6 +710,29 @@ h6 {
   width: 100%;
   height: 100%;
   overflow: hidden; }
+  .challenge-7__dot {
+    position: absolute;
+    z-index: 99;
+    top: 45.48%;
+    left: 30.15%;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 700ms ease-out; }
+  .challenge-7__background {
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #925eb1;
+    background: linear-gradient(90deg, #925eb1 0%, #925eb1 33.3%, #5097d5 33.3%, #5097d5 66.6%, #57b99d 66.6%, #57b99d 99.9%);
+    transition: all 700ms ease-out; }
+  .challenge-7:has(input:hover) .challenge-7__dot {
+    transform: translateX(4.05rem); }
+  .challenge-7:has(input:hover) .challenge-7__background {
+    transform: translateX(-33.3%); }
 
 .color-picker {
   position: relative;
@@ -718,14 +741,6 @@ h6 {
   justify-content: space-between;
   align-items: center;
   z-index: 99; }
-  .color-picker__dot {
-    position: absolute;
-    top: 0.3rem;
-    left: 0.3rem;
-    width: 2.4rem;
-    height: 2.4rem;
-    background-color: white;
-    border-radius: 50%; }
   .color-picker__label {
     cursor: pointer;
     background-color: transparent;
@@ -735,17 +750,7 @@ h6 {
     border-radius: 2px solid white;
     border-radius: 50%; }
     .color-picker__label input {
-      background-color: red;
-      visibility: visible;
+      visibility: hidden;
       width: 3rem;
       height: 3rem;
       z-index: 999; }
-
-.color__overlay {
-  width: 300%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #925eb1;
-  background: linear-gradient(90deg, #925eb1 0%, #925eb1 33.3%, #5097d5 33.3%, #5097d5 66.6%, #57b99d 66.6%, #57b99d 99.9%); }
