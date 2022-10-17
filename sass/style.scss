@@ -36,6 +36,7 @@ $border-radius-very-small: 0.15rem;
 
 $box-shadow-centered: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
 $box-shadow-right-bottom: 12px 10px 10px 0px rgba(0, 0, 0, 0.2);
+$box-shadow-glowing: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px, -6px 10px -1px rgba(255, 255, 255, 0.7);
 
 $font-family-calistoga: 'Calistoga', cursive;
 $font-family-opensans: 'Open Sans', sans-serif;
@@ -199,6 +200,11 @@ h6 {
             font-size: $font-size-medium;
             line-height: normal;
         }
+        &_big3 {
+            font-size: $font-size-medium;
+            font-weight: $font-weight-light;
+            line-height: 1.5rem;
+        }
         &_medium {
             padding-left: 0.5rem;
             font-size: $font-size-medium;
@@ -207,8 +213,9 @@ h6 {
         &_medium2 {
             font-size: $font-size-very-small;
             font-weight: $font-weight-lightest;
-            line-height: 0.7rem;
+            line-height: 0.9rem;
         }
+
         &_smaller {
             font-size: $font-size-very-small;
         }
@@ -226,6 +233,12 @@ h6 {
             font-weight: $font-weight-heavy;
             place-self: center;
         }
+    }
+    &_progress_mint {
+        color: $color-blue-grayish;
+        font-size: $font-size-very-small;
+        font-weight: $font-weight-light;
+        line-height: normal;
     }
 
     &_dark-gray {
@@ -1028,7 +1041,7 @@ h6 {
     height: 100%;
     overflow: hidden;
     background: rgb(40, 64, 78);
-    background: linear-gradient(172deg, rgba(40, 64, 78, 1) 39%, rgba(28, 46, 56, 1) 99%);
+    background: linear-gradient(172deg, rgba(40, 64, 78, 1) 35%, rgba(28, 46, 56, 1) 99%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1039,5 +1052,39 @@ h6 {
     &__headers {
         height: 20%;
         text-align: center;
+    }
+}
+.progress-circle {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+
+    &__middle {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 30%;
+        left: 28%;
+    }
+    &__container {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+    &__bar {
+        width: 100%;
+        height: 100%;
+        border-radius: $border-radius-round;
+        background-color: transparent;
+        border: 0.6rem solid $color-blue-grayish-darkest;
+    }
+    &__fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: $border-radius-round;
     }
 }
