@@ -11,6 +11,10 @@ $color-blue-light: rgb(178, 218, 255);
 $color-blue-grayish: rgb(74, 98, 123);
 $color-blue-clear-light: rgb(76, 182, 222);
 $color-blue-clear: rgb(80, 151, 213);
+$color-blue-clear2: rgb(92, 225, 236);
+$color-blue-grayish-light: #28404e;
+$color-blue-grayish-dark: #1c2e38;
+$color-blue-grayish-darkest: rgb(27, 42, 51);
 $color-green-electric: rgb(96, 173, 133);
 $color-yellow-pale: rgb(230, 190, 119);
 $color-yellow-orangy: rgb(193, 129, 87);
@@ -22,6 +26,7 @@ $color-gray-light: rgb(102, 102, 102);
 $color-red-salmon: rgb(236, 101, 101);
 $color-purple: rgb(146, 94, 177);
 $color-mint: rgb(87, 185, 157);
+$color-mint2: rgb(39, 225, 174);
 
 $border-radius-round: 50%;
 $border-radius-very-big: 3rem;
@@ -190,10 +195,19 @@ h6 {
             font-size: $font-size-huge;
             letter-spacing: 0.4rem;
         }
+        &_big2 {
+            font-size: $font-size-medium;
+            line-height: normal;
+        }
         &_medium {
             padding-left: 0.5rem;
             font-size: $font-size-medium;
             font-weight: $font-weight-lightest;
+        }
+        &_medium2 {
+            font-size: $font-size-very-small;
+            font-weight: $font-weight-lightest;
+            line-height: 0.7rem;
         }
         &_smaller {
             font-size: $font-size-very-small;
@@ -1005,5 +1019,25 @@ h6 {
             height: 3rem;
             z-index: 999;
         }
+    }
+}
+
+// CHALLENGE-8
+.challenge-8 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgb(40, 64, 78);
+    background: linear-gradient(172deg, rgba(40, 64, 78, 1) 39%, rgba(28, 46, 56, 1) 99%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5rem;
+    font-family: $font-family-opensans;
+
+    &__headers {
+        height: 20%;
+        text-align: center;
     }
 }
