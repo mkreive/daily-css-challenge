@@ -146,7 +146,8 @@ h6 {
     place-self: center; }
 
 .header_progress_mint {
-  color: #4a627b;
+  color: #ebebeb;
+  opacity: 0.5;
   font-size: 1rem;
   font-weight: 400;
   line-height: normal; }
@@ -783,13 +784,21 @@ h6 {
   background: linear-gradient(172deg, #28404e 35%, #1c2e38 99%);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 3.5rem;
   font-family: "Open Sans", sans-serif; }
   .challenge-8__headers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center; }
+  .challenge-8__circles {
+    display: flex;
+    flex-direction: row; }
 
 .progress-circle {
+  margin: 1.5rem;
   position: relative;
   width: 7rem;
   height: 7rem;
@@ -798,30 +807,50 @@ h6 {
   align-items: center;
   justify-content: center; }
   .progress-circle__inner {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: green; }
+    justify-content: center; }
+    .progress-circle__inner_small {
+      width: 3rem;
+      height: 3rem; }
+      .progress-circle__inner_small > h3 {
+        font-size: 130%;
+        line-height: 100%; }
   .progress-circle__outer {
     padding: 0.5rem;
-    width: 7rem;
-    height: 7rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
-    border: 0.6rem solid #1b2a33;
-    background-color: red; }
-
-svg {
-  position: absolute;
-  top: 0;
-  left: 0; }
-
-circle {
-  fill: none;
-  stroke: #20bd93;
-  stroke-width: 0.6rem;
-  stroke-dasharray: 320;
-  stroke-dashoffset: 100; }
+    border: 0.5rem solid #1b2a33; }
+    .progress-circle__outer_small {
+      width: 5rem;
+      height: 5rem; }
+  .progress-circle svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    rotate: -90deg; }
+  .progress-circle circle {
+    fill: none;
+    stroke: #20bd93;
+    stroke-width: 0.5rem;
+    stroke-dasharray: 330;
+    stroke-dashoffset: 120; }
+  .progress-circle_small {
+    width: 5rem;
+    height: 5rem; }
+    .progress-circle_small svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      rotate: -90deg; }
+    .progress-circle_small circle {
+      fill: none;
+      stroke: #5ce1ec;
+      stroke-width: 0.5rem;
+      stroke-dasharray: 330;
+      stroke-dashoffset: 120; }

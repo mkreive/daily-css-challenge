@@ -235,7 +235,8 @@ h6 {
         }
     }
     &_progress_mint {
-        color: $color-blue-grayish;
+        color: $color-gray-very-light;
+        opacity: 0.5;
         font-size: $font-size-very-small;
         font-weight: $font-weight-light;
         line-height: normal;
@@ -1043,15 +1044,24 @@ h6 {
     background: linear-gradient(172deg, rgba(40, 64, 78, 1) 35%, rgba(28, 46, 56, 1) 99%);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 3.5rem;
     font-family: $font-family-opensans;
 
     &__headers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
+    }
+    &__circles {
+        display: flex;
+        flex-direction: row;
     }
 }
 .progress-circle {
+    margin: 1.5rem;
     position: relative;
     width: 7rem;
     height: 7rem;
@@ -1061,33 +1071,64 @@ h6 {
     justify-content: center;
 
     &__inner {
-        width: 6rem;
-        height: 6rem;
+        width: 4rem;
+        height: 4rem;
         border-radius: $border-radius-round;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: green;
+
+        &_small {
+            width: 3rem;
+            height: 3rem;
+
+            & > h3 {
+                font-size: 130%;
+                line-height: 100%;
+            }
+        }
     }
     &__outer {
         padding: 0.5rem;
-        width: 7rem;
-        height: 7rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: $border-radius-round;
-        border: 0.6rem solid $color-blue-grayish-darkest;
-        background-color: red;
+        border: 0.5rem solid $color-blue-grayish-darkest;
+        &_small {
+            width: 5rem;
+            height: 5rem;
+        }
     }
-}
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-circle {
-    fill: none;
-    stroke: $color-mint2;
-    stroke-width: 0.6rem;
-    stroke-dasharray: 320;
-    stroke-dashoffset: 100;
+    & svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        rotate: -90deg;
+    }
+    & circle {
+        fill: none;
+        stroke: $color-mint2;
+        stroke-width: 0.5rem;
+        stroke-dasharray: 330;
+        stroke-dashoffset: 120;
+    }
+    &_small {
+        width: 5rem;
+        height: 5rem;
+
+        & svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            rotate: -90deg;
+        }
+        & circle {
+            fill: none;
+            stroke: $color-blue-clear2;
+            stroke-width: 0.5rem;
+            stroke-dasharray: 330;
+            stroke-dashoffset: 120;
+        }
+    }
 }
