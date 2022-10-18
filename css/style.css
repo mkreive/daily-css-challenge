@@ -784,9 +784,9 @@ h6 {
   background: linear-gradient(172deg, #28404e 35%, #1c2e38 99%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 3.5rem;
+  padding: 3rem;
   font-family: "Open Sans", sans-serif; }
   .challenge-8__headers {
     display: flex;
@@ -794,11 +794,12 @@ h6 {
     justify-content: center;
     align-items: center; }
   .challenge-8__circles {
+    width: 60%;
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: space-between; }
 
 .progress-circle {
-  margin: 1.5rem;
   position: relative;
   width: 7rem;
   height: 7rem;
@@ -845,12 +846,17 @@ h6 {
     height: 5rem; }
     .progress-circle_small svg {
       position: absolute;
-      top: 0;
+      top: -0.5rem;
       left: 0;
       rotate: -90deg; }
     .progress-circle_small circle {
       fill: none;
       stroke: #5ce1ec;
       stroke-width: 0.5rem;
-      stroke-dasharray: 330;
-      stroke-dashoffset: 120; }
+      stroke-dasharray: 330; }
+
+#circle2 {
+  stroke-dashoffset: 180; }
+
+#circle3 {
+  stroke-dashoffset: 240; }
