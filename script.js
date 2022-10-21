@@ -24,3 +24,27 @@ btnAdd.forEach((btn) =>
 exitBtn.addEventListener('click', function () {
     overlay.classList.toggle('overlay_hidden');
 });
+
+// CHALLENGE-9
+const okBtn = document.querySelector('.btn_blue');
+const quoteNum = document.getElementById('quote__num');
+const quoteHeader = document.getElementById('quote__header');
+const quoteText = document.getElementById('quote__text');
+
+const quotesData = async function () {
+    try {
+        const response = await fetch('https://type.fit/api/quotes');
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (err) {
+        console.error(err);
+    }
+};
+
+okBtn.addEventListener('click', function () {
+    const quotes = quotesData();
+    console.log(quotes);
+    // const length = quotesData.length();
+    // const randNum = Math.random() * 100;
+});
