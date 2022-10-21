@@ -11,6 +11,7 @@ $color-blue-light: rgb(178, 218, 255);
 $color-blue-grayish: rgb(74, 98, 123);
 $color-blue-clear-light: rgb(76, 182, 222);
 $color-blue-clear: rgb(80, 151, 213);
+$color-blue-clear3: #59a7f4;
 $color-blue-clear2: rgb(92, 225, 236);
 $color-blue-grayish-light: #28404e;
 $color-blue-grayish-dark: #1c2e38;
@@ -25,6 +26,7 @@ $color-gray-very-light: rgb(235, 235, 235);
 $color-gray-clean-light: #8391a1;
 $color-gray-light: rgb(102, 102, 102);
 $color-gray-light-blueish: #cad6e0;
+$color-gray-medium: #646f7d;
 $color-red-salmon: rgb(236, 101, 101);
 $color-purple: rgb(146, 94, 177);
 $color-mint: rgb(87, 185, 157);
@@ -147,11 +149,31 @@ h6 {
         position: relative;
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 60%;
-        height: 35%;
+        height: 40%;
         background-color: $color-white;
         border-radius: $border-radius-very-small;
         box-shadow: $box-shadow-centered-wider;
+        overflow: hidden;
+
+        &__corner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-top: 2.5rem solid $color-gray-clean-light;
+            border-left: 2.5rem solid transparent;
+        }
+        &__num {
+            z-index: 99;
+            padding: 0.2rem 0.5rem;
+            margin-left: auto;
+            color: $color-white;
+            font-size: $font-size-very-very-small;
+            font-weight: $font-weight-medium;
+        }
     }
 
     &_column {
@@ -267,6 +289,12 @@ h6 {
             color: $color-gray-light;
         }
     }
+    &_darkest-gray {
+        color: $color-gray-medium;
+        font-size: $font-size-very-small;
+        font-weight: $font-weight-heavy;
+        text-transform: capitalize;
+    }
 
     &_brown {
         color: $color-brown-pale;
@@ -376,6 +404,18 @@ h6 {
             background-color: $color-white;
             color: $color-red-salmon;
         }
+    }
+    &_blue {
+        width: 100%;
+        height: 25%;
+        padding: 0.2rem;
+        border: none;
+        background-color: $color-blue-clear3;
+        cursor: pointer;
+        color: $color-white;
+        font-size: $font-size-very-very-small;
+        font-weight: $font-weight-medium;
+        margin-top: auto;
     }
 }
 .photo {
@@ -498,6 +538,13 @@ h6 {
         font-size: $font-size-medium;
         font-weight: $font-weight-light;
         line-height: 2.2rem;
+    }
+    &_gray {
+        color: $color-gray-clean-light;
+        font-size: $font-size-very-very-small;
+        font-weight: $font-weight-light;
+        padding: 0.7rem 2rem;
+        text-align: center;
     }
 }
 
@@ -1154,6 +1201,7 @@ h6 {
 
 // CHALLNEGE-9
 .challenge-9 {
+    font-family: $font-family-opensans;
     background-color: $color-gray-light-blueish;
     width: 100%;
     height: 100%;
