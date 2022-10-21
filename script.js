@@ -31,20 +31,18 @@ const quoteNum = document.getElementById('quote__num');
 const quoteHeader = document.getElementById('quote__header');
 const quoteText = document.getElementById('quote__text');
 
-const quotesData = async function () {
-    try {
-        const response = await fetch('https://type.fit/api/quotes');
-        const data = await response.json();
-        console.log(data);
-        return data;
-    } catch (err) {
-        console.error(err);
+const getQuotes = async function () {
+    const response = await fetch('https://type.fit/api/quotes');
+    const data = await response.json();
+    const randNum = Math.floor(Math.random() * 1000);
+    if (!response.ok) {
+        throw new Error('Failed to fetch quotes');
     }
+    const randQuote = data[randNum];
+    quoteHeader.innerText = randQuote.author;
+    quoteText.innerHTML = randQuote.text;
 };
 
 okBtn.addEventListener('click', function () {
-    const quotes = quotesData();
-    console.log(quotes);
-    // const length = quotesData.length();
-    // const randNum = Math.random() * 100;
+    quoteText.innerHTML = getQuotes();
 });
