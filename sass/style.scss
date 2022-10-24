@@ -1208,6 +1208,7 @@ h6 {
 
 // CHALLNEGE-9
 .challenge-9 {
+    transition: all 600ms ease;
     font-family: $font-family-opensans;
     background-color: $color-gray-light-blueish;
     width: 100%;

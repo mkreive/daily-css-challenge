@@ -916,6 +916,7 @@ h6 {
   stroke-dashoffset: 240; }
 
 .challenge-9 {
+  transition: all 600ms ease;
   font-family: "Open Sans", sans-serif;
   background-color: #cad6e0;
   width: 100%;
