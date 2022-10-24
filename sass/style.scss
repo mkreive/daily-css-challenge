@@ -147,6 +147,8 @@ h6 {
     box-shadow: $box-shadow-centered;
 
     &_small {
+        opacity: 0;
+        transition: all 1s ease;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -157,6 +159,7 @@ h6 {
         border-radius: $border-radius-very-small;
         box-shadow: $box-shadow-centered-wider;
         overflow: hidden;
+        opacity: 1;
 
         &__corner {
             position: absolute;
@@ -550,7 +553,7 @@ h6 {
         color: $color-gray-clean-light;
         font-size: $font-size-very-very-small;
         font-weight: $font-weight-light;
-        padding: 1rem 2rem;
+        padding: 0.5rem 2rem 1.3rem 2rem;
         text-align: center;
     }
 }
@@ -1208,7 +1211,6 @@ h6 {
 
 // CHALLNEGE-9
 .challenge-9 {
-    transition: all 600ms ease;
     font-family: $font-family-opensans;
     background-color: $color-gray-light-blueish;
     width: 100%;

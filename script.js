@@ -43,7 +43,10 @@ const getQuotes = async function () {
     quoteText.innerHTML = randQuote.text;
 };
 
+let count = 1;
+
 okBtn.addEventListener('click', function (e) {
-    e.preventDefault();
+    count++;
+    quoteNum.innerText = count;
     quoteText.innerHTML = getQuotes();
 });
