@@ -28,10 +28,13 @@ $color-gray-clean-light: #8391a1;
 $color-gray-light: rgb(102, 102, 102);
 $color-gray-light-blueish: #cad6e0;
 $color-gray-medium: #646f7d;
+$color-gray-dark-bluish: #52707f;
 $color-red-salmon: rgb(236, 101, 101);
 $color-purple: rgb(146, 94, 177);
 $color-mint: rgb(87, 185, 157);
 $color-mint2: #20bd93;
+$color-yellow-darker: #e69d47;
+$color-yellow-lighter: #f6ca53;
 
 $border-radius-round: 50%;
 $border-radius-very-big: 3rem;
@@ -145,6 +148,11 @@ h6 {
     background-color: $color-white;
     border-radius: $border-radius-small;
     box-shadow: $box-shadow-centered;
+
+    &_vertical {
+        height: 75%;
+        width: 60%;
+    }
 
     &_small {
         transition: all 1s ease;
@@ -1242,4 +1250,13 @@ h6 {
 }
 .inactive {
     animation: fadeout 600ms ease-in-out both 500ms;
+}
+
+// CHALLENGE-10
+.challenge-10 {
+    width: 100%;
+    height: 100%;
+    background: $color-yellow-lighter;
+    background: linear-gradient(220deg, $color-yellow-lighter 45%, $color-yellow-darker 99%);
+    display: grid;
 }
