@@ -30,6 +30,7 @@ const okBtn = document.querySelector('.btn_blue');
 const quoteNum = document.getElementById('quote__num');
 const quoteHeader = document.getElementById('quote__header');
 const quoteText = document.getElementById('quote__text');
+const card = document.querySelector('.card_small');
 
 const getQuotes = async function () {
     const response = await fetch('https://type.fit/api/quotes');
@@ -45,7 +46,9 @@ const getQuotes = async function () {
 
 let count = 1;
 
-okBtn.addEventListener('click', function (e) {
+okBtn.addEventListener('click', function () {
+    card.classList.toggle('active');
+    card.classList.toggle('inactive');
     count++;
     quoteNum.innerText = count;
     quoteText.innerHTML = getQuotes();

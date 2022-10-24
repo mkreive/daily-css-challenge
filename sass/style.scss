@@ -147,7 +147,6 @@ h6 {
     box-shadow: $box-shadow-centered;
 
     &_small {
-        opacity: 0;
         transition: all 1s ease;
         position: relative;
         display: flex;
@@ -159,7 +158,6 @@ h6 {
         border-radius: $border-radius-very-small;
         box-shadow: $box-shadow-centered-wider;
         overflow: hidden;
-        opacity: 1;
 
         &__corner {
             position: absolute;
@@ -1217,4 +1215,31 @@ h6 {
     height: 100%;
     display: grid;
     place-items: center;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fadeout {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.active {
+    animation: fadein 600ms ease-in-out both 500ms;
+}
+.inactive {
+    animation: fadeout 600ms ease-in-out both 500ms;
 }
