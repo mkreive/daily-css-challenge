@@ -32,24 +32,31 @@ const quoteHeader = document.getElementById('quote__header');
 const quoteText = document.getElementById('quote__text');
 const card = document.querySelector('.card_small');
 
+let quotesArr;
+let count = 1;
+
 const getQuotes = async function () {
     const response = await fetch('https://type.fit/api/quotes');
     const data = await response.json();
-    const randNum = Math.floor(Math.random() * 1000);
+
     if (!response.ok) {
         throw new Error('Failed to fetch quotes');
     }
-    const randQuote = data[randNum];
+    return (quotesArr = [...data]);
+};
+getQuotes();
+
+const getRandomQuote = function () {
+    const randNum = Math.floor(Math.random() * quotesArr.length);
+    const randQuote = { author: quotesArr[randNum].author, text: quotesArr[randNum].text };
     quoteHeader.innerText = randQuote.author;
     quoteText.innerHTML = randQuote.text;
 };
-
-let count = 1;
 
 okBtn.addEventListener('click', function () {
     card.classList.toggle('active');
     card.classList.toggle('inactive');
     count++;
     quoteNum.innerText = count;
-    quoteText.innerHTML = getQuotes();
+    getRandomQuote();
 });
