@@ -150,7 +150,7 @@ h6 {
     box-shadow: $box-shadow-centered;
 
     &_vertical {
-        height: 75%;
+        height: 70%;
         width: 60%;
     }
 
@@ -1259,4 +1259,8 @@ h6 {
     background: $color-yellow-lighter;
     background: linear-gradient(220deg, $color-yellow-lighter 45%, $color-yellow-darker 99%);
     display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
 }

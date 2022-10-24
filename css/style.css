@@ -71,7 +71,7 @@ h6 {
   border-radius: 0.3rem;
   box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3); }
   .card_vertical {
-    height: 75%;
+    height: 70%;
     width: 60%; }
   .card_small {
     transition: all 1s ease;
@@ -954,4 +954,8 @@ h6 {
   height: 100%;
   background: #f6ca53;
   background: linear-gradient(220deg, #f6ca53 45%, #e69d47 99%);
-  display: grid; }
+  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem; }
