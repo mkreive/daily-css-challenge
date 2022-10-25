@@ -152,6 +152,21 @@ h6 {
     &_vertical {
         height: 70%;
         width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        &__header {
+            margin: 1.5rem;
+            text-align: center;
+        }
+        &__body {
+            border-top: 1px solid $color-gray-light-blueish;
+            width: auto;
+            margin: 1.5rem;
+            padding-top: 1.5rem;
+        }
     }
 
     &_small {
@@ -231,6 +246,18 @@ h6 {
 
 // COMPONENTS
 .header {
+    &_blue_big {
+        color: $color-gray-dark-bluish;
+        font-size: $font-size-small;
+        font-weight: $font-weight-heavy;
+        text-transform: capitalize;
+    }
+    &_blue_medium {
+        color: $color-gray-dark-bluish;
+        font-size: $font-size-tiny;
+        font-weight: $font-weight-light;
+        text-transform: capitalize;
+    }
     &_white {
         text-transform: uppercase;
         line-height: 3rem;
@@ -1259,8 +1286,5 @@ h6 {
     background: $color-yellow-lighter;
     background: linear-gradient(220deg, $color-yellow-lighter 45%, $color-yellow-darker 99%);
     display: grid;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
+    font-family: $font-family-opensans;
 }
