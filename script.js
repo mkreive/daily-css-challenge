@@ -60,3 +60,33 @@ okBtn.addEventListener('click', function () {
     quoteNum.innerText = count;
     getRandomQuote();
 });
+
+// CHALLENGE-10
+const weekdayHeader = document.getElementById('weekdayHeader');
+const dateHeader = document.getElementById('dateHeader');
+
+const daysArr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const monthsArr = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+];
+
+const todayDate = new Date();
+
+let today = daysArr[todayDate.getDay()];
+const year = todayDate.getFullYear();
+const month = monthsArr[todayDate.getMonth()];
+const day = todayDate.getDate();
+
+weekdayHeader.innerHTML = today;
+dateHeader.innerHTML = `${month} ${day}, ${year}`;
