@@ -71,8 +71,8 @@ h6 {
   border-radius: 0.3rem;
   box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3); }
   .card_vertical {
-    height: 70%;
-    width: 60%;
+    height: 68%;
+    width: 58%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,9 +82,13 @@ h6 {
       text-align: center; }
     .card_vertical__body {
       border-top: 1px solid #cad6e0;
-      width: auto;
-      margin: 1.5rem;
-      padding-top: 1.5rem; }
+      width: 70%;
+      height: 100%;
+      padding-top: 1.5rem;
+      padding-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
   .card_small {
     transition: all 1s ease;
     position: relative;
@@ -980,3 +984,34 @@ h6 {
   background: linear-gradient(220deg, #f6ca53 45%, #e69d47 99%);
   display: grid;
   font-family: "Open Sans", sans-serif; }
+
+.todo__item {
+  display: block;
+  position: relative;
+  font-size: 0.8rem;
+  color: #52707f;
+  cursor: pointer;
+  width: 100%; }
+  .todo__item:has(:checked) {
+    color: #cad6e0; }
+  .todo__item:has(:checked) .todo__item__checkmark {
+    color: #cad6e0;
+    border: none;
+    background-image: url("https://res.cloudinary.com/kreiva/image/upload/v1655102840/DevJobsApp/icon-check_b1gwus.svg");
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .todo__item__label {
+    cursor: pointer; }
+  .todo__item__checkbox {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    opacity: 0; }
+  .todo__item__checkmark {
+    position: absolute;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #52707f; }
