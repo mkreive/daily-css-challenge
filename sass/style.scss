@@ -1305,11 +1305,10 @@ h6 {
         color: $color-gray-light-blueish;
     }
     &:has(:checked) &__checkmark {
-        color: $color-gray-light-blueish;
-        border: none;
-        background-image: url('https://res.cloudinary.com/kreiva/image/upload/v1655102840/DevJobsApp/icon-check_b1gwus.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
+        opacity: 0;
+    }
+    &:has(:checked) &__checked {
+        opacity: 1;
     }
 
     &__label {
@@ -1329,5 +1328,11 @@ h6 {
         border-radius: $border-radius-round;
         background-color: $color-white;
         border: 1px solid $color-gray-dark-bluish;
+    }
+    &__checked {
+        opacity: 0;
+        position: absolute;
+        right: -0.3rem;
+        top: -0.3rem;
     }
 }

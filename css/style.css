@@ -995,11 +995,9 @@ h6 {
   .todo__item:has(:checked) {
     color: #cad6e0; }
   .todo__item:has(:checked) .todo__item__checkmark {
-    color: #cad6e0;
-    border: none;
-    background-image: url("https://res.cloudinary.com/kreiva/image/upload/v1655102840/DevJobsApp/icon-check_b1gwus.svg");
-    background-size: contain;
-    background-repeat: no-repeat; }
+    opacity: 0; }
+  .todo__item:has(:checked) .todo__item__checked {
+    opacity: 1; }
   .todo__item__label {
     cursor: pointer; }
   .todo__item__checkbox {
@@ -1015,3 +1013,8 @@ h6 {
     border-radius: 50%;
     background-color: white;
     border: 1px solid #52707f; }
+  .todo__item__checked {
+    opacity: 0;
+    position: absolute;
+    right: -0.3rem;
+    top: -0.3rem; }
