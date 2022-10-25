@@ -29,6 +29,7 @@ $color-gray-light: rgb(102, 102, 102);
 $color-gray-light-blueish: #cad6e0;
 $color-gray-medium: #646f7d;
 $color-gray-dark-bluish: #52707f;
+$color-gray-very-very-dark: #2d3641;
 $color-red-salmon: rgb(236, 101, 101);
 $color-purple: rgb(146, 94, 177);
 $color-mint: rgb(87, 185, 157);
@@ -149,6 +150,12 @@ h6 {
     border-radius: $border-radius-small;
     box-shadow: $box-shadow-centered;
 
+    &_horizontal {
+        height: 60%;
+        width: 80%;
+        border-radius: 0;
+    }
+
     &_vertical {
         height: 68%;
         width: 58%;
@@ -207,6 +214,7 @@ h6 {
 
     &_column {
         flex-direction: column;
+        z-index: 10;
     }
 
     &__left {
@@ -1358,4 +1366,12 @@ h6 {
             width: 2rem;
         }
     }
+}
+
+// CHALLENGE-11
+.challenge-11 {
+    width: 100%;
+    height: 100%;
+    background-color: $color-gray-very-very-dark;
+    display: grid;
 }
