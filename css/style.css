@@ -995,9 +995,18 @@ h6 {
   .todo__item:has(:checked) {
     color: #cad6e0; }
   .todo__item:has(:checked) .todo__item__checkmark {
+    transition: all 0.5s ease-out;
+    scale: 1.5;
     opacity: 0; }
   .todo__item:has(:checked) .todo__item__checked {
+    transition: all 0.5s ease-in;
     opacity: 1; }
+    .todo__item:has(:checked) .todo__item__checked::before {
+      transition: all 0.8s ease-in;
+      cursor: none;
+      transform: translateX(2rem);
+      height: 2rem;
+      width: 2rem; }
   .todo__item__label {
     cursor: pointer; }
   .todo__item__checkbox {
@@ -1018,3 +1027,13 @@ h6 {
     position: absolute;
     right: -0.3rem;
     top: -0.3rem; }
+    .todo__item__checked::before {
+      opacity: 1;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      background-color: white;
+      height: 2rem;
+      width: 2rem; }

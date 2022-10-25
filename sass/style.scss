@@ -1305,10 +1305,21 @@ h6 {
         color: $color-gray-light-blueish;
     }
     &:has(:checked) &__checkmark {
+        transition: all 0.5s ease-out;
+        scale: 1.5;
         opacity: 0;
     }
     &:has(:checked) &__checked {
+        transition: all 0.5s ease-in;
         opacity: 1;
+
+        &::before {
+            transition: all 0.8s ease-in;
+            cursor: none;
+            transform: translateX(2rem);
+            height: 2rem;
+            width: 2rem;
+        }
     }
 
     &__label {
@@ -1334,5 +1345,17 @@ h6 {
         position: absolute;
         right: -0.3rem;
         top: -0.3rem;
+
+        &::before {
+            opacity: 1;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            background-color: $color-white;
+            height: 2rem;
+            width: 2rem;
+        }
     }
 }
