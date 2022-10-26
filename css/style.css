@@ -74,6 +74,14 @@ h6 {
     height: 60%;
     width: 80%;
     border-radius: 0; }
+    .card_horizontal__header {
+      width: 100%;
+      height: 18%;
+      padding: 1rem;
+      background-color: #404d5c;
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
   .card_vertical {
     height: 68%;
     width: 58%;
@@ -1048,3 +1056,18 @@ h6 {
   height: 100%;
   background-color: #2d3641;
   display: grid; }
+
+.square-box {
+  position: relative;
+  height: 100%;
+  width: 3rem;
+  cursor: pointer; }
+  .square-box input {
+    position: absolute;
+    opacity: 0; }
+  .square-box__square {
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid #cad6e0;
+    width: 0.6rem;
+    height: 0.6rem; }

@@ -29,6 +29,7 @@ $color-gray-light: rgb(102, 102, 102);
 $color-gray-light-blueish: #cad6e0;
 $color-gray-medium: #646f7d;
 $color-gray-dark-bluish: #52707f;
+$color-gray-dark: #404d5c;
 $color-gray-very-very-dark: #2d3641;
 $color-red-salmon: rgb(236, 101, 101);
 $color-purple: rgb(146, 94, 177);
@@ -154,6 +155,16 @@ h6 {
         height: 60%;
         width: 80%;
         border-radius: 0;
+
+        &__header {
+            width: 100%;
+            height: 18%;
+            padding: 1rem;
+            background-color: $color-gray-dark;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
     &_vertical {
@@ -1374,4 +1385,22 @@ h6 {
     height: 100%;
     background-color: $color-gray-very-very-dark;
     display: grid;
+}
+.square-box {
+    position: relative;
+    height: 100%;
+    width: 3rem;
+    cursor: pointer;
+
+    & input {
+        position: absolute;
+        opacity: 0;
+    }
+    &__square {
+        position: absolute;
+        background-color: transparent;
+        border: 1px solid $color-gray-light-blueish;
+        width: 0.6rem;
+        height: 0.6rem;
+    }
 }
