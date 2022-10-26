@@ -1112,3 +1112,8 @@ h6 {
     background-color: #59a7f4; }
   .square-box:has(:checked) .square-box__square {
     border: 1px solid white; }
+
+.challenge-12 {
+  background-color: #4f6278;
+  width: 100%;
+  height: 100%; }
