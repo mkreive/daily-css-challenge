@@ -90,3 +90,43 @@ const day = todayDate.getDate();
 
 weekdayHeader.innerHTML = today;
 dateHeader.innerHTML = `${month} ${day}, ${year}`;
+
+// CHALLENGE-11
+const radioBtns = document.querySelectorAll('.radio-btn');
+const articleHeader = document.querySelector('.radio__header');
+const articleText = document.querySelector('.radio__text');
+const articleBox = document.querySelector('.card_horizontal__body');
+
+const articles = [
+    {
+        id: 'radio-1',
+        title: 'Dashboard',
+        text: 'Loremloremlorem ipsumdolor sitsitsit ametconsectetur, adipisicing elit. Aliquid corruptisitquos animi reprehenderit quisquamillo voluptatum, ipsam architecto? Sedofficiaat, istefacere distinctio repudiandae delectus acilisab culpa?Aliquid corrupti sit quos animi reprehenderit quisquam illovoluptatum',
+    },
+    {
+        id: 'radio-2',
+        title: 'Comments',
+        text: 'Loremloremloremipsumdolor sitsitsit ametconsectetur, adipisicingelit. Aliquid corruptisitquos animi reprehenderit quisquamillovoluptatum, ipsamarchitecto? Sedofficiaat',
+    },
+    {
+        id: 'radio-3',
+        title: 'Notifications',
+        text: 'Sedofficiaat, istefacere distinctio repudiandae delectus acilisab culpa?Aliquid corrupti sit ',
+    },
+    {
+        id: 'radio-4',
+        title: 'Settings',
+        text: 'Loremloremlorem ipsumdolor sitsitsit ametconsectetur, adipisicing elit. Aliquid corruptisitquos animi reprehenderit quisquamillo voluptatum, ipsam architecto? Sedofficiaat, istefacere distinctio repudiandae delectus acilisab culpa?Aliquid corrupti sit quos animi reprehenderit quisquam illovoluptatumAliquid corrupt',
+    },
+];
+
+radioBtns.forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+        articleBox.classList.add('shift-up');
+        const clickedRadio = e.target.id;
+        const [article] = articles.filter((article) => article.id === clickedRadio);
+        articleHeader.innerHTML = article.title;
+        articleText.innerText = article.text;
+        articleBox.classList.remove('shift-up');
+    });
+});

@@ -141,6 +141,19 @@ h6 {
     margin: 2rem;
     overflow: hidden;
 }
+@keyframes shift-down {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .card {
     margin: auto;
     position: relative;
@@ -153,6 +166,7 @@ h6 {
     box-shadow: $box-shadow-centered;
 
     &_horizontal {
+        transition: all 500ms ease;
         font-family: $font-family-opensans;
         height: 60%;
         width: 80%;
@@ -169,9 +183,11 @@ h6 {
             align-items: center;
         }
         &__body {
-            padding: 1.5rem 1.2rem;
+            animation: shift-down 700ms linear 700ms;
+            padding: 1.5rem;
             height: 72%;
             overflow: hidden;
+            opacity: 1;
         }
     }
 
@@ -622,7 +638,7 @@ h6 {
     }
     &_blurry {
         font-family: 'Flow Circular', cursive;
-        margin-top: 0.5rem;
+        margin-top: 0.7rem;
         font-size: $font-size-very-small;
         color: $color-gray-very-light;
         line-height: 0.8rem;
