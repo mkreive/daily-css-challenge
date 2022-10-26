@@ -28,6 +28,7 @@ $color-gray-clean-light: #8391a1;
 $color-gray-light: rgb(102, 102, 102);
 $color-gray-light-blueish: #cad6e0;
 $color-gray-medium: #646f7d;
+$color-gray-medium-blueish: #8797ab;
 $color-gray-dark-bluish: #52707f;
 $color-gray-dark: #404d5c;
 $color-gray-very-very-dark: #2d3641;
@@ -152,18 +153,25 @@ h6 {
     box-shadow: $box-shadow-centered;
 
     &_horizontal {
+        font-family: $font-family-opensans;
         height: 60%;
         width: 80%;
         border-radius: 0;
+        display: flex;
+        flex-direction: column;
 
         &__header {
             width: 100%;
             height: 18%;
-            padding: 1rem;
             background-color: $color-gray-dark;
             display: flex;
             flex-direction: row;
             align-items: center;
+        }
+        &__body {
+            padding: 1.5rem 1.2rem;
+            height: 72%;
+            overflow: hidden;
         }
     }
 
@@ -611,6 +619,13 @@ h6 {
         font-weight: $font-weight-light;
         padding: 0.5rem 2rem 1.3rem 2rem;
         text-align: center;
+    }
+    &_blurry {
+        font-family: 'Flow Circular', cursive;
+        margin-top: 0.5rem;
+        font-size: $font-size-very-small;
+        color: $color-gray-very-light;
+        line-height: 0.8rem;
     }
 }
 
@@ -1391,16 +1406,37 @@ h6 {
     height: 100%;
     width: 3rem;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     & input {
+        cursor: pointer;
         position: absolute;
+        width: 2rem;
+        height: 2rem;
+        top: 0.5rem;
+        left: 0.5rem;
         opacity: 0;
     }
+
     &__square {
+        cursor: pointer;
         position: absolute;
         background-color: transparent;
-        border: 1px solid $color-gray-light-blueish;
+        border: 1px solid $color-gray-medium-blueish;
         width: 0.6rem;
         height: 0.6rem;
+
+        &:hover {
+            border: 1px solid $color-white;
+        }
+    }
+    &:has(:checked) {
+        transition: all 0.5s ease;
+        background-color: $color-blue-clear3;
+    }
+    &:has(:checked) &__square {
+        border: 1px solid $color-white;
     }
 }
