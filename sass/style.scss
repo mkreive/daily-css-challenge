@@ -1460,6 +1460,7 @@ h6 {
 
 // CHALLENGE-12
 .challenge-12 {
+    font-family: $font-family-opensans;
     position: relative;
     background-color: $color-blue-grayish-medium;
     width: 100%;
@@ -1468,16 +1469,56 @@ h6 {
     justify-content: center;
     align-items: center;
 }
-.lines {
-    position: absolute;
-    height: 20%;
-    width: 90%;
+.menu-box {
+    position: relative;
+    cursor: pointer;
+    width: 13%;
+    height: 7%;
 
-    & input {
-        opacity: 0;
+    &::before,
+    &::after {
+        transition: all 0.5s ease;
+        content: '';
         position: absolute;
-        width: 5rem;
-        height: 5rem;
-        left: 40%;
+        height: 0.3rem;
+        width: 3.5rem;
+        background-color: $color-white;
+        box-shadow: $box-shadow-centered;
+    }
+    &::after {
+        top: 1.5rem;
+    }
+    &__nav {
+        opacity: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 1.5rem;
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: $font-size-very-small;
+        font-weight: $font-weight-medium;
+
+        &__link {
+            cursor: pointer;
+        }
+    }
+}
+.expanded {
+    width: 80%;
+    height: 14%;
+    cursor: inherit;
+
+    & ul {
+        opacity: 1;
+    }
+    &::before,
+    &::after {
+        height: 0.1rem;
+        width: 100%;
+    }
+    &::after {
+        top: 3.5rem;
     }
 }

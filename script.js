@@ -130,3 +130,10 @@ radioBtns.forEach((btn) => {
         articleBox.classList.remove('shift-up');
     });
 });
+
+// CHALLENGE-12
+const menuBtn = document.querySelector('.menu-box');
+
+menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('expanded');
+});
