@@ -1460,7 +1460,24 @@ h6 {
 
 // CHALLENGE-12
 .challenge-12 {
+    position: relative;
     background-color: $color-blue-grayish-medium;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lines {
+    position: absolute;
+    height: 20%;
+    width: 90%;
+
+    & input {
+        opacity: 0;
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        left: 40%;
+    }
 }
