@@ -1470,25 +1470,29 @@ h6 {
     align-items: center;
 }
 .menu-box {
+    transition: all 0.7s ease-in-out;
     position: relative;
     cursor: pointer;
-    width: 13%;
-    height: 7%;
+    width: 80%;
+    height: 14%;
 
     &::before,
     &::after {
-        transition: all 0.5s ease;
-        content: '';
         position: absolute;
-        height: 0.3rem;
+        top: 30%;
+        left: 40%;
+        transition: all 0.7s ease-in-out;
+        content: '';
+        height: 0.25rem;
         width: 3.5rem;
         background-color: $color-white;
         box-shadow: $box-shadow-centered;
     }
     &::after {
-        top: 1.5rem;
+        top: 65%;
     }
     &__nav {
+        transition: all 0.5s ease-in-out;
         opacity: 0;
         list-style: none;
         display: flex;
@@ -1501,24 +1505,29 @@ h6 {
         font-weight: $font-weight-medium;
 
         &__link {
+            transition: all 0.3s ease;
             cursor: pointer;
+            &:hover {
+                color: $color-gray-clean-light;
+            }
         }
     }
 }
 .expanded {
-    width: 80%;
-    height: 14%;
     cursor: inherit;
 
     & ul {
         opacity: 1;
     }
+
     &::before,
     &::after {
-        height: 0.1rem;
-        width: 100%;
+        transform: scale(6, 0.5);
+    }
+    &::before {
+        top: 0;
     }
     &::after {
-        top: 3.5rem;
+        top: 90%;
     }
 }
